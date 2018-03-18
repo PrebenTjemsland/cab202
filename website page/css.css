@@ -2,8 +2,8 @@ body {
     background-image: url('http://www.mustdobrisbane.com/sites/default/files/styles/feature_full/public/captain-burke-park.jpg?itok=lu3pOock');
     background-repeat: no-repeat;
     background-size: 100% 50%;
-	 background-color: #9999FF;
- font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+	background-color: #ccddff;
+	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
 }
 
 input[type=text] {
@@ -23,7 +23,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    width: 100%;
+    width: 90%;
 	
 }
 
@@ -39,6 +39,8 @@ input[type=text]:focus {
 .topnav {
   overflow: hidden;
   background-color: #e9e9e9;
+  width: 100%;
+  align: center;
 }
 
 .topnav a {
