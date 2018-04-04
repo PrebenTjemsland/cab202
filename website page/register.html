@@ -1,69 +1,28 @@
 <!DOCTYPE html>
+<title>Register Page</title>
 <html>
-	<title>Register Page</title>
-	<head>
-		<link href="css.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<div class="center">
-		<div class="topnav">
-			<a class="active" href="#home">Home</a>
-			<a href="#about">About</a>
-			<a href="#contact">Contact</a>
-		</div>
-		</div>
-  
-    
-    <form>     
-        <div class="center1">
-        <div class="scaled">
-        <h1>Sign Up Here</h1>
-      
-   <p>Please fill in this form to create an account.</p>
-    
-    <div class="center1">
-        
-    <div class=left1>   
-    <label for="fName"> <b>First Name</b> </label>
-    <input type="text" placeholder="Enter First Name" name="fName" required>
-    </div>
-    
-    <div class="right1">
-    <label for="lName"> <b>Last Name</b> </label>
-    <input type="text" placeholder="Enter Last Name" name="lName" required>
-    </div>
-     
-    <label for="email"> <b>Email</b> </label>
-    <br/>
-    <input type="text" placeholder="Enter Email" name="email" required>
-    <br/>
-
-    <label for="psw"><b>Password</b></label>
-    <br/>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    <br/>
-        
-    <label for="psw-repeat"> <b>Repeat Password</b> </label>
-    <br/>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-    <br/>
-        
-    <label>
-      <input type="checkbox" checked="checked" name="remember" > Remember me
-    </label>
-    </div>
-    <br/>
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-            
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-        </div>
-
-        </form>
-
-		<footer>
-
-		</footer>
-	</body>
+<head>
+<link href="css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<img src="" alt="Captain Burke Park">   
+<div class="space"> 
+</div> 
+    <div class="loginbox">
+    <h1>Login Here</h1>
+    <form>
+    <p>First Name</p>
+    <input type="text" name="firstName" placeholder="First Name" required>
+    <p>Last Name</p>
+    <input type="text" name="lastName" placeholder="Last Name" required> 
+    <p>Email</p>
+    <input type="email" name="email" placeholder="Email" required>
+    <p>Password</p>
+    <input type="password" name="password" placeholder="Password" required>
+    <p>Repeat Password</p>
+    <input type="password" name="passwordRepeat" placeholder="Repeat Password" required>
+    <input type="submit" name="submit" value="Register">
+    </form>
+</div>
+</body>
 </html>
