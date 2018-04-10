@@ -175,3 +175,19 @@ h1 {
 .space{
     padding: 400px;
 }
+
+ #map {
+   width: 70%;
+   height: 400px;
+   background-color: grey;
+   left: 15%;
+ }
+ 
+#content {
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 200px;
+    margin-right: 200px;
+    border:1px solid black;
+    background-color: white;
+}

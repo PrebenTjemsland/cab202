@@ -1,5 +1,6 @@
 <html>
 	<title>Search Page</title>
+	<script type="website.js" src="website.js"></script>
 	<head>
 		<link href="css.css" rel="stylesheet" type="text/css">
 	</head>
@@ -29,6 +30,25 @@
 
 		<img src="" alt="Captain Burke Park" style="width:100%;height:100%;">
 		<br>
+		<div id="map">
+		<script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+	</div>
+		
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
+    </script>
 		<p align="center">map goes here</p>
 		<footer>
 			<p>Posted by: Hege Refsnes</p>
