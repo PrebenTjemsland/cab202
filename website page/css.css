@@ -40,7 +40,6 @@ input[type=text]:focus {
   overflow: hidden;
   background-color: #e9e9e9;
   width: 30%;
-  align: right;
 }
 
 .topnav a {

@@ -5,6 +5,7 @@
 	</head>
 	<body>
 		<div class="center">
+		<img src="bcc.jpg" alt="Brisbane City Council logo">
 		<div class="topnav">
 			<a href="searchpage.html">Home</a>
 			<a href="searchResult">Parks</a>
@@ -15,9 +16,29 @@
 		<h1>Park Page</h1>
 		<div id="content">THis is where the content goes</div>
 		<br>
-		<div id="map"></div>
+		<div id="map">
+		<script>
+            function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+	  
+    </script>
+	</div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
+    </script>
+		<div class="footer">
+			<p>Made by Benjamin Lynch and Preben Tjemsland</p>
+		</div>
 		
-		<div id="content">test test</div>
 	</body>
 </html>
 		
