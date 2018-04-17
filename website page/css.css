@@ -116,10 +116,9 @@ h1 {
 
 .loginbox {
     width: 320px;
-    padding-top: 50px;
+    padding-top: 100px;
     background: #000;
     color: #fff;
-    top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -139,7 +138,7 @@ h1 {
     font-size: 15px;
 }
 
-.loginbox input[type="text"], [type="email"], [type="password"]{
+.loginbox input[type="text"], [type="email"], [type="password"], [type="number"]{
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent; 
@@ -172,7 +171,7 @@ h1 {
 }
 
 .space{
-    padding: 400px;
+    padding: 300px;
 }
 
  #map {
