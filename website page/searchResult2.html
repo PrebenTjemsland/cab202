@@ -5,28 +5,26 @@
 	</head>
 	<body>
 		<div class="center">
-		<img src="bcc.jpg" alt="Brisbane City Council logo">
+		<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
 		<div class="topnav">
 			<a href="searchpage.html">Home</a>
 			<a href="searchResult">Parks</a>
-			<a href="register.html=">Register</a>
+			<a href="register.html">Register</a>
 		</div>
 		</div>
 	
-		<h1>Park Pagetest</h1>
-		<br>
-		<br>
-		<br>
-		<div id="content">THis is where the content goes</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<div id="map1">
+
+		<div id="namebox"><h3>Banchory Court, Westfield Carindale Shopping Centre</h3></div>
+        <div id="contentH"> <h2>User Reviews</h2>
+        <div id="content">--Ola Nordmann-- &#10; When i used this internett hotspot the other day the speed was fantastic.  &#10; 5/5 stars</div>
+            <br/>
+        <div id="content1">--John Doe-- &#10; Tried using this yesterday, but it was no working  &#10; 2/5 stars</div>
+        </div>
+		<div id="map2">
 		<script>
             function initMap() {
         var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map1'), {
+        var map = new google.maps.Map(document.getElementById('map2'), {
           zoom: 4,
           center: uluru
         });
@@ -34,13 +32,18 @@
           position: uluru,
           map: map
         });
-      }
-	  
+      }  
     </script>
 	</div>
+       
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
     </script>
+
+        <div id="rating"><h2>Rating 3.5/5</h2></div>
+        <div class="space"></div> 
+
+
 
 		<div class="footer">
 			<p>Made by Benjamin Lynch and Preben Tjemsland</p>
