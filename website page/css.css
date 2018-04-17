@@ -7,7 +7,7 @@ body {
 }
 
 input[type=text] {
-    width: 130px;
+    width: 90%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -196,7 +196,6 @@ h1 {
 	margin: auto;
     border:1px solid black;
     background-color: white;
-	
 	width: 30%;
 }
 .footer {
@@ -208,4 +207,23 @@ h1 {
     color: white;
     text-align: center;
 }
-test
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+	padding: 10px;
+}
+td {
+    padding: 15px;
+}
+
+#content1 {
+    padding: 10px;
+	margin: auto;
+    border:1px solid black;
+    background-color: white;
+	width: 50%;
+}
