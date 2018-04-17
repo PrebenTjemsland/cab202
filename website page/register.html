@@ -17,11 +17,17 @@
     <input type="text" name="lastName" placeholder="Last Name" required> 
     <p>Email</p>
     <input type="email" name="email" placeholder="Email" required>
+    <p>Postcode</p>
+    <input type="number" pattern="[0-9]{4}" name="postCode" placeholder="Postcode" title="A four digit postcode is required." required>
     <p>Password</p>
     <input type="password" name="password" placeholder="Password" required>
     <p>Repeat Password</p>
     <input type="password" name="passwordRepeat" placeholder="Repeat Password" required>
-    <input type="submit" name="submit" value="Register">
+    <br/>
+    <a> Do you accept our</a>
+    <a href="LinkToTerms">Terms and condition?</a> 
+    <input type="checkbox"  value="Tick" required>
+    <input type="submit" name="submit"  value="Register">
     </form>
 </div>
 </body>
