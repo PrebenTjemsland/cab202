@@ -120,17 +120,22 @@ h1 {
     color: #fff;
     }
 
-
+/*
+creates a black box in the middel of the screen.
+*/
 .loginbox {
     width: 28%;
     background: #000;
     color: #fff;
-    margin-left: 45%;
-    transform: translate(-50%, -50%);
+    margin: auto;
     box-sizing: border-box;
     padding: 50px; 30px;
 }
 
+/*
+Removes margin and padding from p.
+Makes p bold
+*/
 .loginbox p{
     margin: 0;
     padding: 0;
@@ -143,16 +148,19 @@ h1 {
     font-size: 15px;
 }
 
+
 .loginbox input[type="text"], [type="email"], [type="password"], [type="number"]{
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fff;/* Makes the white lines under the input fields. */
     background: transparent; 
     outline: none;
     height: 40px;
     color: #fff;
     font-size: 16px;
 }
-
+/*
+Makes the red button.
+*/
 .loginbox input[type="submit"]{
     border: none;
     outline: none;
@@ -161,13 +169,16 @@ h1 {
     color: #fff;
     font-size: 18px;
 }
-
+/*
+Makes the red button orange on hover.
+*/
 .loginbox input[type="submit"]:hover{
     cursor: pointer;
     background: #ffc107;
     color: #fff;
 }
-
+/*
+makes tearms and conditin text grey*/
 .loginbox a{
     text-decoration: none;
     font-size: 12px;
@@ -175,11 +186,19 @@ h1 {
     color: darkgray;
 }
 
+/*
+used instead or multiple <br>
+*/
 .space{
     padding: 300px;
 }
+
+/*
+used instead or multiple <br>
+*/
+
 .spaceForm{
-    padding-top: 450px;
+    padding-top: 100px;
 }
 
  #map {
@@ -194,6 +213,8 @@ h1 {
    float:left;
    display:inline-block;
  }
+
+
   #map1 {
    width: 50%;
    height: 400px;
@@ -202,7 +223,9 @@ h1 {
    float:left;
    display:inline-block;
  }
- 
+/*
+Rezizing and moving map to the left of the screen for the SearchResult2 page. 
+*/ 
 
  #map2 {
    width: 50%;
@@ -218,13 +241,19 @@ h2{
     text-align: center;
     vertical-align: middle;
 }
+/*
+Makes the name of wifi locations break to newline before to fit the better inside the box.
+*/
+
 h3{
     max-width: 95%;
     word-wrap:break-word;
     text-align: center;
     vertical-align: middle;
 }
-
+/*
+Makes the box for reviews on the left side of the map.
+*/
 #contentH {
     padding: 5px;
     margin-top: 10px;
@@ -238,33 +267,18 @@ h3{
     overflow: hidden;
     align-content: center;
 }
-
-#contentH #content{
+/*
+Makes a box with white background around the content inside contentReview.
+*/
+#contentReview{
     width: 95%;
     height: 30%;
     margin: auto;
     text-align: center;
     border:5px solid black;
     white-space: pre-wrap;
-
-}
-
-#contentH #content1{
-    width: 95%;
-    height: 30%;
-    margin: auto;
-    text-align: center;
-    border:5px solid black;
-    white-space: pre-wrap;
-}
-
-#content {
     padding: 10px;
-	margin: auto;
-    border:1px solid black;
     background-color: white;
-	width: 30%;
-
 }
 
 .footer {
@@ -276,6 +290,10 @@ h3{
     color: white;
     text-align: center;
 }
+/*
+Positions the rating box under the review box 
+and gives it a ligthblue background with black boarder. 
+*/
 
 #rating{
     margin-top: 30px;
@@ -288,7 +306,10 @@ h3{
     background-color: #ccddff;
     align-content: center;
 }
-
+/*
+Positions the box with the name of the current wifi location above the map.
+And gives it a ligthblue background with black boarder. 
+*/
 #namebox{
     width: 50%;
     padding-bottom: 10px;
@@ -301,6 +322,9 @@ h3{
     align-content: center;
 }
 
+/* 
+moves the Brisbane City Council logo to the top of the navigation bar.
+*/
 img{
     vertical-align: top;
 }
@@ -317,7 +341,7 @@ td {
     padding: 15px;
 }
 
-#content1 {
+#contentTable {
     padding: 10px;
 	margin: auto;
     border:1px solid black;
