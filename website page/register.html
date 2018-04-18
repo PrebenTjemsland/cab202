@@ -5,7 +5,8 @@
 <link href="css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-		<div class="center">
+	<!-- Makes the bar at the top with the logo and navigation -->	
+    <div class="center">
 		<img src="bcc.jpg" alt="Brisbane City Council logo">
 		
 		<div class="topnav">
@@ -14,9 +15,12 @@
 		        <a class="active" href="register.html">Register</a>
 		</div>
 		</div>
+<!-- adds padding over the registerbox-->	    
 <div class="spaceForm"> 
 </div> 
+    <!-- creates a box -->	
     <div class="loginbox">
+    <!-- Adds all input to the registerbox with HTML5 validation -->	
     <h1>Login Here</h1>
     <form>
     <p>First Name</p>
@@ -32,8 +36,10 @@
     <p>Repeat Password</p>
     <input type="password" name="passwordRepeat" placeholder="Repeat Password" required>
     <br/>
+    <!-- Creates the tearm and contition text and tick box. makes Terms and condition a clickable link -->	
     <a> Do you accept our</a>
-    <a href="LinkToTerms">Terms and condition?</a> 
+    <a href="LinkToTerms">Terms and condition</a>
+    <a>?</a>
     <input type="checkbox"  value="Tick" required>
     <input type="submit" name="submit"  value="Register">
     </form>
