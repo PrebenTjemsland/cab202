@@ -4,7 +4,7 @@ Places background image and locks it in place
 body {
     background-image: url('http://www.mustdobrisbane.com/sites/default/files/styles/feature_full/public/captain-burke-park.jpg?itok=lu3pOock');
     background-repeat: no-repeat;
-    background-size: 100% 50%;
+    background-size: 100% 500px;
 	background-color: #ccddff;
 	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
 }
@@ -36,11 +36,8 @@ Creates a white box with border centered in the middle of the screen
     margin: auto;
     width: 60%;
     height: 85px;
-    border: 3px solid #000000;
-    padding: 5px;
-    background-color: #ccddff;
-    border: 3px solid #73AD21;
-    padding: 5px;
+    border: 5px solid #73AD21;
+    padding: 2px;
 	background-color: #FFFFFF;
 }
 
@@ -258,13 +255,19 @@ Places a box used to place a google map inside of different size.
 Rezizing and moving map to the left of the screen for the SearchResult2 page. 
 */ 
  #map2 {
-   width: 50%;
+   width: 40%;
    height: 400px;
    background-color: grey;
    left: 10%;
    float:left;
    display:inline-block;
    overflow: hidden;
+   border: 3px solid #000000;
+   padding: 5px;
+   background-color: #ccddff;
+   border: 3px solid #73AD21;
+   padding: 5px;
+   background-color: #FFFFFF;
  }
 
  /*
@@ -285,7 +288,7 @@ h3{
     vertical-align: middle;
 }
 /*
-Makes the box for reviews on the left side of the map.
+Makes the box for reviews on the right side of the map.
 */
 #contentH {
     padding: 5px;
@@ -293,8 +296,8 @@ Makes the box for reviews on the left side of the map.
     margin-right: 10%;
     width: 450px;
     height: 400px;
-    border:3px solid black;
-    background-color: #ccddff;
+    border:3px solid #73AD21;
+    background-color: white;
 	float: right;
     display:inline-block;
     overflow: hidden;
@@ -320,7 +323,8 @@ Creates a fixed footer on the bottom of the screen.
 .footer {
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom:0px;
+	height: 35px;
     width: 100%;
     background-color: red;
     color: white;
@@ -336,10 +340,10 @@ and gives it a ligthblue background with black boarder.
     margin-left: 800px;
     width: 450px;
     height: 100px;
-    border:3px solid black;
+    border:3px solid #73AD21;
+    background-color: white;
     float:right;
     margin-right: 10%;
-    background-color: #ccddff;
     align-content: center;
 }
 /*
@@ -353,8 +357,8 @@ And gives it a ligthblue background with black boarder.
     margin-bottom: 15px;
     margin-left: 25%;
     height: 75px;
-    border:5px solid black;
-    background-color: #ccddff;
+    border:3px solid #73AD21;
+    background-color: white;
     align-content: center;
 	
 }
