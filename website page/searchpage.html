@@ -8,15 +8,15 @@
 		
 		 <!-- Makes the bar at the top with the logo and navigation -->	
 		<div class="center">
-		<img src="bcc.jpg" alt="Brisbane City Council logo">
-		
+		<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+		<!-- Makes the boxes inside the bar and positions information-->	
+		Brisbane City Council Wifi Parks
 		<div class="topnav">
 			<a class="active" href="searchpage.html">Home</a>
 			<a href="searchResult.html">Parks</a>
 			<a href="register.html">Register</a>
 		</div>
 		</div>
-		<h1>header 1 est</h1>
 		<br>	
 		<br>
 		<br>	
@@ -27,9 +27,9 @@
 		<br>
 			<div class="center">
 			Search For a local Wifi Park:
-				<form>
+				<form action="searchResult2.html">
 					<input type="text" name="search" placeholder="Search..">
-					<button type="submit"><i class="fa fa-search"></i></button>
+					<button type="submit">Search<i class="fa fa-search"></i></button>
 				</form>
 			</div>
 		<br>
@@ -40,6 +40,7 @@
 		<br>
 		<br>
 		<br>
+		<!-- creates a map with googles API -->
 		<div id="map">
 		<script>
             function initMap() {
@@ -59,6 +60,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
     </script>
+	<!-- creates a Footer to stay at the bottom of the page-->
 		<div class="footer">
 			<p>Made by Benjamin Lynch and Preben Tjemsland</p>
 		</div>
