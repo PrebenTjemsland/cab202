@@ -1,3 +1,6 @@
+/*
+Places background image and locks it in place
+*/
 body {
     background-image: url('http://www.mustdobrisbane.com/sites/default/files/styles/feature_full/public/captain-burke-park.jpg?itok=lu3pOock');
     background-repeat: no-repeat;
@@ -26,6 +29,9 @@ input[type=text]:focus {
     width: 90%;	
 }
 
+/*
+Creates a white box with border centered in the middle of the screen
+*/
 .center {
     margin: auto;
     width: 60%;
@@ -37,6 +43,10 @@ input[type=text]:focus {
     padding: 5px;
 	background-color: #FFFFFF;
 }
+
+/*
+creates a white box with a border centered in the middle of the screen but with different dimensions.
+*/
 .center1 {
     margin: auto;
     width: 60%;
@@ -50,13 +60,16 @@ input[type=text]:focus {
 
 * {box-sizing: border-box;}
 
+/*
+Start of the top navigation bar
+*/
 .topnav {
   overflow: hidden;
   background-color: #e9e9e9;
   margin-top: 10px;
   float: right;
-    margin-right: 2%;
-  width: 25%;
+  margin-right: 2%;
+  width: 32%;
 }
 
 .topnav a {
@@ -122,6 +135,9 @@ input[type=text]:focus {
   }
 }
 
+/*
+Styling of Header 1.
+*/
 h1 {
     margin: 0;
     padding: 0 0 20px;
@@ -211,6 +227,9 @@ used instead or multiple <br>
     padding-top: 100px;
 }
 
+/*
+Box used to place the map inside.
+*/
  #map {
    width: 50%;
    height: 400px;
@@ -224,7 +243,9 @@ used instead or multiple <br>
    display:inline-block;
  }
 
-
+/*
+Places a box used to place a google map inside of different size.
+*/
   #map1 {
    width: 50%;
    height: 400px;
@@ -236,7 +257,6 @@ used instead or multiple <br>
 /*
 Rezizing and moving map to the left of the screen for the SearchResult2 page. 
 */ 
-
  #map2 {
    width: 50%;
    height: 400px;
@@ -247,6 +267,9 @@ Rezizing and moving map to the left of the screen for the SearchResult2 page.
    overflow: hidden;
  }
 
+ /*
+Styling for Header 2.
+*/
 h2{
     text-align: center;
     vertical-align: middle;
@@ -291,6 +314,9 @@ Makes a box with white background around the content inside contentReview.
     background-color: white;
 }
 
+/*
+Creates a fixed footer on the bottom of the screen.
+*/
 .footer {
     position: fixed;
     left: 0;
@@ -340,14 +366,25 @@ img{
     vertical-align: top;
 }
 
+/*
+Styling for the table.
+*/
 table, th, td {
     border: 2px solid black;
     border-collapse: collapse;
 }
+
+/*
+Styling for the table headers to align text along left hand side of box
+*/
 th {
     text-align: left;
 	padding: 10px;
 }
+
+/*
+Styling for the table cells to give padding 
+*/
 td {
     padding: 15px;
 }
