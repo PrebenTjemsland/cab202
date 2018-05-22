@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <title>Register Page</title>
 <html>
-<head>
-<link href="css.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-	<!-- Makes the bar at the top with the logo and navigation -->	
-    <div class="center">
-		<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-		Brisbane City Council Wifi Parks
-		<div class="topnav">
+	<head>
+		<link href="css.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<!-- Makes the bar at the top with the logo and navigation -->	
+		<div class="center">
+			<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+			Brisbane City Council Wifi Parks
+				<div class="topnav">
             		<a href="searchpage.html">Home</a>
-			<a href="searchResult.html">Parks</a>
-		        <a class="active" href="register.html">Register</a>
+					<a href="searchResult.html">Parks</a>
+					<a class="active" href="register.html">Register</a>
+				</div>
 		</div>
-		</div>
-<!-- adds padding over the registerbox-->	    
-<div class="spaceForm"> 
-</div> 
-    <!-- creates a box -->	
-    <div class="loginbox">
-    <!-- Adds all input to the registerbox with HTML5 validation -->	
-    <h1>Login Here</h1>
-    <form>
-    <p>First Name</p>
-    <input type="text" name="firstName" placeholder="First Name" required>
-    <p>Last Name</p>
-    <input type="text" name="lastName" placeholder="Last Name" required> 
-    <p>Email</p>
-    <input type="email" name="email" placeholder="Email" required>
-    <p>Postcode</p>
-    <input type="number" pattern="[0-9]{4}" name="postCode" placeholder="Postcode" title="A four digit postcode is required." required>
-    <p>Password</p>
-    <input type="password" name="password" placeholder="Password" required>
-    <p>Repeat Password</p>
-    <input type="password" name="passwordRepeat" placeholder="Repeat Password" required>
-    <br/>
+		<!-- adds padding over the registerbox-->	    
+		<div class="spaceForm"> 
+		</div> 
+		<!-- creates a box -->	
+		<div class="loginbox">
+		<!-- Adds all input to the registerbox with HTML5 validation -->	
+			<h1>Login Here</h1>
+				<form>
+					<p>First Name</p>
+					<input type="text" name="firstName" placeholder="First Name" required>
+					<p>Last Name</p>
+					<input type="text" name="lastName" placeholder="Last Name" required> 
+					<p>Email</p>
+					<input type="email" name="email" placeholder="Email" required>
+					<p>Postcode</p>
+					<input type="number" pattern="[0-9]{4}" name="postCode" placeholder="Postcode" title="A four digit postcode is required." required>
+					<p>Password</p>
+					<input type="password" name="password" placeholder="Password" required>
+					<p>Repeat Password</p>
+					<input type="password" name="passwordRepeat" placeholder="Repeat Password" required>
+					<br/>
     <!-- Creates the tearm and contition text and tick box. makes Terms and condition a clickable link -->	
-    <a> Do you accept our</a>
-    <a href="LinkToTerms">Terms and condition</a>
-    <a>?</a>
-    <input type="checkbox"  value="Tick" required>
-    <input type="submit" name="submit"  value="Register">
-    </form>
-</div>
-</body>
+					<a> Do you accept our</a>
+					<a href="LinkToTerms">Terms and condition</a>
+					<a>?</a>
+					<input type="checkbox"  value="Tick" required>
+					<input type="submit" name="submit"  value="Register">
+				</form>
+		</div>
+	</body>
 </html>
