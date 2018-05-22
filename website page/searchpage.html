@@ -1,3 +1,17 @@
+<?php
+    //Establish connection    
+    $pdo = new PDO('mysql:host=localhost:3306;dbname=cab230', 'min', 'Secret!');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sth = ("SELECT Suburb, WifiID FROM WifiSpots");
+    try {
+    $stmt=$pdo->prepare($sth);
+    $stmt->execute();
+    $results=$stmt->fetchAll();
+        } catch(PDOException $e) {
+        echo 'ERROR: ' . $e->getMessage();
+        }
+?> 
+
 <html>
 	<title>Search Page</title>
 		<script type="C:\Users\benly\OneDrive\Documents\GitHub\cab230-web\website page\website.js" src="C:\Users\benly\OneDrive\Documents\GitHub\cab230-web\website page\website.js"></script>
@@ -25,10 +39,24 @@
 		<br>
 		<br>
 			<div class="center">
-			Search For a local Wifi Park:
-				<form action="searchResult2.html">
-					<input type="text" name="search" placeholder="Search..">
-					<button type="submit">Search<i class="fa fa-search"></i></button>
+                Search For a local Wifi Park:
+				<form method="post" action="searchResult.php" >
+                  <select name='SuburbSelected'>
+            <option>-- Select Suburb--</option>
+                    <?php foreach($results as $output) {?>
+                      <option><?PHP echo $output["Suburb"];?></option>
+                      <?PHP } ?>
+                    </select>
+                    
+                    <select name='NameSelected'>
+            <option>-- Select Name--</option>
+                    <?php foreach($results as $output) {?>
+                      <option><?PHP echo $output["WifiID"];?></option>
+                      <?PHP } ?>
+                    </select>
+        
+					
+					<input type="submit" name="submit"  value="Search">
 				</form>
 			</div>
 		<br>
