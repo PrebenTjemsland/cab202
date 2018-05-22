@@ -20,45 +20,46 @@
 		<br>
 		<br>
 		<br>
-			<div class="center1">
-				<table style="width:100%">
-					<tr>
-						<th> Wifi Hotspot Name</th>
-						<th> Address</th>
-						<th> Suburb</th>
-					</tr>
-					<tr>
-						<td>Wifi Entries</td>
-						<td> Address Entries</td>
-						<td> Suburb Entries</td>
-					</tr>
-					<tr>
-						<td>Wifi Entries</td>
-						<td> Address Entries</td>
-						<td> Suburb Entries</td>
-					</tr>
-					<tr>
-						<td>Wifi Entries</td>
-						<td> Address Entries</td>
-						<td> Suburb Entries</td>
-					</tr>
-					<tr>
-						<td>Wifi Entries</td>
-						<td> Address Entries</td>
-						<td> Suburb Entries</td>
-					</tr>
-					<tr>
-						<td>Wifi Entries</td>
-						<td> Address Entries</td>
-						<td> Suburb Entries</td>
-					</tr>
-					<tr>
-						<td>Wifi Entries</td>
-						<td> Address Entries</td>
-						<td> Suburb Entries</td>
-					</tr>
-				</table>
-			</div>
+			<div class="center1"> 
+   			 <table class="Result">
+				<?php
+				//Establish connection    
+				$pdo = new PDO('mysql:host=localhost:3306;dbname=cab230', 'min', 'Secret!');
+				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					try {
+					$Suburb = $_POST['SuburbSelected'];
+					if ($_POST['SuburbSelected'] == "-- Select Suburb--"){
+   					 $result = $pdo->query('SELECT WifiID, Adress, Suburb, Latitude, Longitude
+					FROM WifiSpots
+					ORDER BY WifiID;');
+					}
+   						 else{
+						$result = $pdo->query('SELECT WifiID, Adress, Suburb, Latitude, Longitude
+						FROM WifiSpots
+						WHERE Suburb LIKE "'.$Suburb.'%"
+						ORDER BY WifiID;');
+						}
+						} catch (PDOException $e) {
+						echo "{$e->getMessage()}";
+						}
+					echo "<table>
+					<tr><th>Name
+					</th><th>Adress
+					</th><th>Subburb
+					</th><th>More info
+					</th></tr>";
+
+					foreach ($result as $WifiSpots) {
+    				echo
+       				"<tr><td>".$WifiSpots['WifiID'].
+       				"</td><td>".$WifiSpots['Adress'].
+       				"</td><td>".$WifiSpots['Suburb'].
+       				"</td><td>".'<a href="searchResult2.php?park='.$WifiSpots['WifiID'] . '">More info</a></td></tr>';
+        			"</td></tr>";
+    				}
+ 				?>
+    		</table>
+       		 </div>
 		<br>
 		<br>
 		<br>
