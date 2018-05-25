@@ -243,7 +243,7 @@ Box used to place the map inside.
 /*
 Places a box used to place a google map inside of different size.
 */
-  #map1 {
+  #map_1 {
    width: 50%;
    height: 400px;
    background-color: grey;
@@ -254,7 +254,7 @@ Places a box used to place a google map inside of different size.
 /*
 Rezizing and moving map to the left of the screen for the SearchResult2 page. 
 */ 
- #map2 {
+ #map_2 {
    width: 40%;
    height: 400px;
    background-color: grey;
