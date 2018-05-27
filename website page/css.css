@@ -57,6 +57,18 @@ creates a white box with a border centered in the middle of the screen but with 
 
 * {box-sizing: border-box;}
 
+.rightlog {
+    margin-right: 2%;
+    width: 17%;
+    height: 25%;
+    border: 5px solid #73AD21;
+    padding: 2px;
+	background-color: #FFFFFF;
+	float: right;
+}
+
+
+
 /*
 Start of the top navigation bar
 */
