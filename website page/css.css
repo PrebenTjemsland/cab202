@@ -76,7 +76,8 @@ Start of the top navigation bar
   text-align: center;
   padding: 5% 5%;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 100%;
+  width: 30%;
 }
 
 .topnav a:hover {
