@@ -128,7 +128,8 @@ Start of the top navigation bar
   background: #ccc;
 }
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {*/
+
   .topnav .search-container {
     float: none;
   }
@@ -220,7 +221,7 @@ makes tearms and conditin text grey*/
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color: darkgray;
+    color: #A9A9A9;
 }
 
 /*
