@@ -35,9 +35,10 @@
 			Log in Here
 				<form>
 					<p>Email</p>
-					<input type="text" name="email" placeholder="Email" required>
+					<input type="email1" name="email" placeholder="Email" required>
 					<p>Password</p>
-					<input type="text" name="email" placeholder="Password..." required>
+					<input type="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password1" name="password" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+					<button type="submit"> Login </button>
 				</form>
 			</div>
 		<br>	
