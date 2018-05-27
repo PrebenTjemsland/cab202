@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <title>Register Page</title>
-<html>
-<head>
-<link href="css.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-	<!-- Makes the bar at the top with the logo and navigation -->	
-    <div class="center">
-		<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-		Brisbane City Council Wifi Parks
-		<div class="topnav">
-            		<a href="searchpage.php">Home</a>
-			<a href="searchResult.php">Parks</a>
-		        <a class="active" href="register.php">Register</a>
+	<html>
+		<head>
+			<link href="css.css" rel="stylesheet" type="text/css">
+		</head>
+		<body>
+		<!-- Makes the bar at the top with the logo and navigation -->	
+		<div class="center">
+			<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+				Brisbane City Council Wifi Parks
+					<div class="topnav">
+						<a href="searchpage.php">Home</a>
+						<a href="searchResult.php">Parks</a>
+						<a class="active" href="register.php">Register</a>
+					</div>
 		</div>
-		</div>
-<!-- adds padding over the registerbox-->	    
+		<!-- adds padding over the registerbox-->	    
 
-    <!-- creates a box -->	
-    <div class="loginbox">
+		<!-- creates a box -->	
+		<div class="loginbox">
     <!-- Adds all input to the registerbox with HTML5 validation -->	
-    <h1>Login Here</h1>
-    <form method="post" action="register.php">
-    <p>User name</p>
-    <input type="text" name="UserName" pattern="[A-Za-z]{0-25}" placeholder="User Name" required>
-    <p>First Name</p>
-    <input type="text" name="FirstNames" pattern="[A-Za-z]{0-25}" placeholder="First Name" required>
-    <p>Last Name</p>
-    <input type="text" name="LastName" pattern="[A-Za-z]{0-25}" placeholder="Last Name" required> 
-    <p>Email</p>
-    <input type="text" name="Email" placeholder="Email" required>
-    <p>Postcode</p>
-    <input type="number" pattern="[0-9]{4}" name="PostCode" placeholder="Postcode" title="A four digit postcode is required." required>
-    <p>Date of birth</p>
-    <input type="date" name="DateOfBirth" placeholder="Date of birth" required>    
-    <p>Password</p>
-    <input type="password" name="Password" placeholder="Password" required>
-    <p>Repeat Password</p>
-    <input type="password" name="PasswordRe" placeholder="Repeat Password" >
-    <br/>
+			<h1>Register</h1>
+				<form method="post" action="register.php">
+					<p>User name</p>
+						<input type="text" name="UserName" pattern="[A-Za-z]{0-25}" placeholder="User Name" required>
+					<p>First Name</p>
+						<input type="text" name="FirstNames" pattern="[A-Za-z]{0-25}" placeholder="First Name" required>
+					<p>Last Name</p>
+						<input type="text" name="LastName" pattern="[A-Za-z]{0-25}" placeholder="Last Name" required> 
+					<p>Email</p>
+						<input type="text" name="Email" placeholder="Email" required>
+					<p>Postcode</p>
+						<input type="number" pattern="[0-9]{4}" name="PostCode" placeholder="Postcode" title="A four digit postcode is required." required>
+					<p>Date of birth</p>
+						<input type="date" name="DateOfBirth" placeholder="Date of birth" required>    
+					<p>Password</p>
+						<input type="password" name="Password" placeholder="Password" required>
+					<p>Repeat Password</p>
+						<input type="password" name="PasswordRe" placeholder="Repeat Password" >
+					<br/>
     <!-- Creates the tearm and contition text and tick box. makes Terms and condition a clickable link -->	
-    <a> Do you accept our</a>
-    <a href="LinkToTerms">Terms and condition</a>
-    <a>?</a>
-    <input type="checkbox"  value="Tick" required>
-    <input type="submit" name="submit"  value="Register">
-    </form>
-</div>
-    
-    
+					<a> Do you accept our</a>
+						<a href="LinkToTerms">Terms and condition</a>
+						<a>?</a>
+					<input type="checkbox"  value="Tick" required>
+					<input type="submit" name="submit"  value="Register">
+				</form>
+		</div>
+       
 
 <?php
 function insert()
@@ -93,5 +92,5 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 ?>
     
     
-</body>
-</html>
+		</body>
+	</html>

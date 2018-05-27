@@ -15,82 +15,65 @@
 <html>
 	<title>Search Page</title>
 		<script type="text/javascript" src="website.js"></script>
-		<head>
-			<link href="css.css" rel="stylesheet" type="text/css">
-		</head>
-		<body >
+			<head>
+				<link href="css.css" rel="stylesheet" type="text/css">
+			</head>
+			<body >
 		 <!-- Makes the bar at the top with the logo and navigation -->	
-			<div class="center">
+				<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
 		<!-- Makes the boxes inside the bar and positions information-->	
 				Brisbane City Council Wifi Parks
-				<div class="topnav">
-					<a class="active" href="searchpage.html">Home</a>
-					<a href="searchResult.html">Parks</a>
-					<a href="register.html">Register</a>
+					<div class="topnav">
+						<a class="active" href="searchpage.html">Home</a>
+						<a href="searchResult.html">Parks</a>
+						<a href="register.html">Register</a>
+					</div>
 				</div>
-			</div>
 			<div class="rightlog"> 
-			Log in Here
+				Log in Here
 				<form>
-					<p>Email</p>
-					<input type="email1" name="email" placeholder="Email" required>
+					<p>Username</p>
+						<input type="email1" name="email" placeholder="Email" required>
 					<p>Password</p>
-					<input type="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password1" name="password" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+						<input type="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password1" name="password" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 					<button type="submit"> Login </button>
 				</form>
 			</div>
-		<br>	
-		<br>
-		<br>	
-		<br>
-		<br>	
-		<br>
-		<br>
-			<div class="center">
+			<div class="spaceForm"></div> 
+				<div class="center">
                 Search For a local Wifi Park:
-				<form method="post" action="searchResult.php" >
-                  <select name='SuburbSelected'>
-            <option>-- Select Suburb--</option>
-                    <?php foreach($results as $output) {?>
-                      <option><?PHP echo $output["Suburb"];?></option>
-                      <?PHP } ?>
-                    </select>
-                    
-                    <select name='NameSelected'>
-            <option>-- Select Name--</option>
-                    <?php foreach($results as $output) {?>
-                      <option><?PHP echo $output["WifiID"];?></option>
-                      <?PHP } ?>
-                    </select>
-        
-					
-					<input type="submit" name="submit"  value="Search">
-				</form>
-			</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+					<form method="post" action="searchResult.php" >
+					  <select name='SuburbSelected'>
+						<option>-- Select Suburb--</option>
+						<?php foreach($results as $output) {?>
+						  <option><?PHP echo $output["Suburb"];?></option>
+						  <?PHP } ?>
+						</select>
+						
+						<select name='NameSelected'>
+						<option>-- Select Name--</option>
+						<?php foreach($results as $output) {?>
+						  <option><?PHP echo $output["WifiID"];?></option>
+						  <?PHP } ?>
+						</select>
+			
+						<input type="submit" name="submit"  value="Search">
+					</form>
+				</div>
+				<div class="spaceForm"></div> 
 		<!-- creates a map with googles API -->
-		<div id="map">
-			<script type="text/javascript" src="website.js">
+				<div id="map">
+					<script type="text/javascript" src="website.js">
+					</script>
+				</div>
 				
-			</script>
-		</div>
-				
-		<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
-		</script>
-		
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
+				</script>
 	<!-- creates a Footer to stay at the bottom of the page-->
-		<div class="footer">
-			<p>Made by Benjamin Lynch and Preben Tjemsland</p>
-		</div>
-	</body>
+				<div class="footer">
+					<p>Made by Benjamin Lynch and Preben Tjemsland</p>
+				</div>
+			</body>
 </html>

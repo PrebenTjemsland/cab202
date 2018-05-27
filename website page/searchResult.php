@@ -9,16 +9,17 @@
 		<!-- Places and Positions the Logo in the nav bar -->	
 				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
 		Brisbane City Council Wifi Parks
-					<div class="topnav">
-			
-									<a href="searchpage.php">Home</a>
-			<a class="active" href="searchResult.php">Parks</a>
-			<a href="register.php">Register</a>
-		</div>
-		</div>
-		<br><br><br>
-<div class="center1"> 
-    <table class="Result">
+				<div class="topnav">
+					<a href="searchpage.php">Home</a>
+					<a class="active" href="searchResult.php">Parks</a>
+					<a href="register.php">Register</a>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="center1"> 
+				<table class="Result">
 <?php
 //Establish connection    
 $pdo = new PDO('mysql:host=localhost:3306;dbname=cab230', 'min', 'Secret!');
@@ -74,24 +75,20 @@ foreach ($result as $WifiSpots) {
         "</td></tr>";
     }
  ?>
-    </table>
-     <br>
-     <br>
+				</table>
+				<br>
+				<br>
 		<!-- creates a map with googles API -->
-			<div id="map_1">
-				<script type="text/javascript" src="website1.js">
-       
-				</script>
-			</div>
-			<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
-			</script>
-				<div class="spaceForm"></div> 
-				<div class="spaceForm"></div> 
+				<div id="map_1">
+					<script type="text/javascript" src="website1.js"></script>
+				</div>
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap"></script>
+					<div class="spaceForm"></div> 
+					<div class="spaceForm"></div> 
 	<!-- creates a Footer to stay at the bottom of the page-->
-			<div class="footer">
+				<div class="footer">
 				<p>Made by Benjamin Lynch and Preben Tjemsland</p>
-			</div>
-		</div>		
-	</body>
+				</div>
+			</div>		
+		</body>
 </html>

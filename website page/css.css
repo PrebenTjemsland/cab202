@@ -55,12 +55,12 @@ creates a white box with a border centered in the middle of the screen but with 
 	background-color: #FFFFFF;
 }
 
-* {box-sizing: border-box;}
+*{box-sizing: border-box;}
 
 .rightlog {
     margin-right: 2%;
     width: 17%;
-    height: 25%;
+    height: 200px;
     border: 5px solid #73AD21;
     padding: 2px;
 	background-color: #FFFFFF;
@@ -137,7 +137,7 @@ Start of the top navigation bar
     display: block;
     text-align: left;
     width: 100%;
-    margin: 50;
+    margin: 50px;
     padding: 14px;
   }
   .topnav input[type=text] {
@@ -195,6 +195,7 @@ Makes p bold
     font-size: 16px;
 }
 
+/*
 Makes the red button.
 */
 .loginbox input[type="submit"]{
@@ -241,13 +242,10 @@ used instead or multiple <br>
 Box used to place the map inside.
 */
  #map {
-   width: 50%;
-   height: 400px;
-   background-color: grey;
    left: 5%;
    width: 60%;
    height: 400px;
-   background-color: grey;
+   background-color: gray;
    left: 20%;
    float:left;
    display:inline-block;
@@ -259,7 +257,7 @@ Places a box used to place a google map inside of different size.
   #map_1 {
    width: 50%;
    height: 400px;
-   background-color: grey;
+   background-color: gray;
    left: 20%;
    float:left;
    display:inline-block;
@@ -270,7 +268,7 @@ Rezizing and moving map to the left of the screen for the SearchResult2 page.
  #map_2 {
    width: 40%;
    height: 400px;
-   background-color: grey;
+   background-color: gray;
    left: 10%;
    float:left;
    display:inline-block;
