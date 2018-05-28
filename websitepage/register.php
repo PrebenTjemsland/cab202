@@ -37,7 +37,7 @@
 					<p>Last Name</p>
 						<input type="text" name="LastName" pattern="[A-Za-z]{1,}" placeholder="Last Name" title="Must contain at least only letters" required> 
 					<p>Email</p>
-						<input type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
+						<input type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" title="Must be valid email adress format" required>
 					<p>Postcode</p>
 						<input type="text" pattern="[0-9]{4}" name="PostCode" placeholder="Postcode" title="A four digit postcode is required." required>
 					<p>Date of birth</p>
