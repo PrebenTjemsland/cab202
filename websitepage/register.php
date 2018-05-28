@@ -7,12 +7,13 @@
 		<body>
 		<!-- Makes the bar at the top with the logo and navigation -->	
 		<div class="center">
-			<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-				Brisbane City Council Wifi Parks
+			
 					<div class="topnav">
-						<a href="searchpage.php">Home</a>
-						<a href="searchResult.php">Parks</a>
+						<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+						Brisbane City Council Wifi Parks
 						<a class="active" href="register.php">Register</a>
+						<a href="searchResult.php">Parks</a>
+						<a href="searchpage.php">Home</a>
 					</div>
 		</div>
 		<!-- adds padding over the registerbox-->	    
@@ -41,7 +42,7 @@
 					<br/>
     <!-- Creates the tearm and contition text and tick box. makes Terms and condition a clickable link -->	
 					<a> Do you accept our</a>
-						<a href="LinkToTerms">Terms and condition</a>
+						<a href="LinkToTerms">Terms and conditions</a>
 						<a>?</a>
 					<input type="checkbox"  value="Tick" required>
 					<input type="submit" name="submit"  value="Register">
