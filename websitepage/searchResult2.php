@@ -1,3 +1,8 @@
+<?php
+    //Establish connection    
+    include("config.php");   
+?>
+
 <html>
 	<title>Park Page</title>
 		<head>
@@ -7,15 +12,14 @@
         <!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				
-				<div class="topnav">
-					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-						Brisbane City Council Wifi Parks
-					<a href="register.php">Register</a>		
-					<a href="searchResult.php">Parks</a>
-					<a href="searchpage.php">Home</a>		
-				</div>
-			</div>
+				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+				Brisbane City Council Wifi Parks
+					<div class="topnav">
+			<a href="searchpage.php">Home</a>
+			<a href="searchResult.php">Parks</a>
+			<a href="register.php">Register</a>
+		</div>
+		</div>
 		
 		<br>
 		<br>
@@ -24,9 +28,6 @@
     <table id="Result2">
         
 <?php
-//Establish connection    
-  $pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try {
 $WifiID = $_GET['park'];
 $result = $pdo->query('SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
@@ -59,9 +60,6 @@ foreach ($result as $WifiSpots) {
     <table id="Review">
  
    <?php
-//Establish connection    
-$pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try {
 $WifiID2 = $_GET['park'];
 $stmt = $pdo->prepare('SELECT Rating, Content, Re_Username, Re_WifiID
@@ -93,13 +91,25 @@ foreach ($stmt as $Reviews) {
         
    <br>     
    <br>     
-   <br>     
-<div class="center2"> 
-<a>Leave a review</a>
-    <br>
-<form method="post" action="">
-		<textarea type="text" name="Content" placeholder="Review" style="width: 80%; height: 200px;"> </textarea>
-			<select name='Rating'>
+   <br>    
+            
+<?php      
+        if (empty(isset($_SESSION['login_user']))) {
+            ?> 
+            <div class="center2"> 
+            <a>You need to be logged in to leave a review.</a>
+            <a>You can go to the <a href="searchpage.php">Home page</a> to login</a>
+            </div>
+            <?php
+                }
+            else{
+                ?>
+            <div class="center2"> 
+                <a>Leave a review</a>
+                <br>
+                <form method="post" action="">
+                    <input type="text" name="Content" placeholder="Review">
+                    <select name='Rating'>
                     <option value="">--Choose rating--</option>
                     <option Value="1">-1-</option>
                     <option Value="2">-2-</option>
@@ -108,11 +118,13 @@ foreach ($stmt as $Reviews) {
                     <option Value="5">-5-</option> 
                     </select>
     	<input type="submit" name="submitRating" value="Add">
-  
+  <?PHP 
+        }
+        ?>
+        
 </form>   
         </div>
-        
-        <?PHP
+          <?PHP           
     if(isset($_POST['submitRating'])) {
 
         $stmt = $pdo->prepare("INSERT INTO Reviews (Content, Rating, Re_UserName, Re_WifiID) VALUES (:Content, :Rating, :Re_UserName, :Re_WifiID)");
@@ -123,7 +135,7 @@ foreach ($stmt as $Reviews) {
         
         $Content = $_POST['Content'];
         $Rating = $_POST['Rating'];
-        $Re_UserName = "PrebenTjemsland";
+        $Re_UserName = $_SESSION['login_user'];
         $Re_WifiID = $_GET['park'];
         
         $stmt->execute();
