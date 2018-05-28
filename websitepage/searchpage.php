@@ -13,14 +13,29 @@
 
    
  session_start();
-  if($_SERVER['REQUEST_METHOD']=='POST') {
-      $UserName = $_POST['user'];
-      $Password = $_POST['pass'];
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+      $UserName = $_POST["username"];
+      $Password = $_POST['password'];
+      $PasswordHashed = hash("sha512", $Password);
        // username and password sent from form 
-       $stmt = $pdo->prepare("SELECT * FROM Users WHERE Username = '$UserNamem' and Password = '$Password'");
-       //Bind parameters that will be inserted into the statement
+       $stmt = $pdo->prepare("SELECT Username FROM users WHERE Username = '$UserName' and password = '$PasswordHashed'");
        $stmt->execute();
-       // If result matched $myusername and $mypassword, table row must be 1 row 
+       $resultLogin = $stmt->fetchAll();
+       $counter = 0;
+       foreach ($resultLogin as $test)
+       {
+           $counter++;
+       }
+       if($counter == 1) {
+           $_SESSION['login_user'] = $UserName;
+           header("location: welcome.php");
+
+           
+       }
+      else {
+         $error = "Your Login Name or Password is invalid";
+      }
+  }
 ?>
 
 
@@ -39,21 +54,19 @@
 		<!-- Makes the boxes inside the bar and positions information-->	
 				Brisbane City Council Wifi Parks
 					<div class="topnav">
-						<a class="active" href="searchpage.html">Home</a>
-						<a href="searchResult.html">Parks</a>
-						<a href="register.html">Register</a>
+						<a class="active" href="searchpage.php">Home</a>
+						<a href="searchResult.php">Parks</a>
+						<a href="register.php">Register</a>
 					</div>
 				</div>
                 
                 
 			<div class="rightlog"> 
 				Log in Here
-				<form metohd="post" action="searchpage.php">
-					<p>Username</p>
-                    <input type="text" name="user" placeholder="Username" required>
-					<p>Password</p>
-						<input type="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password1" name="pass" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-					<button type="submit" name="submit"> Login </button>
+				 <form action = "" method = "post">
+                     <input type="text" name="username">
+                      <input type="text" name="password">
+					<input type = "submit" value = " Submit "/><br /> 
 				</form>
 			</div>
                 
@@ -65,7 +78,7 @@
 
 			<div class="center1">
                 Search For a local Wifi Park:
-				<form method="post" action="searchResult.php" >
+				<form method="post" action="searchResult.php">
                   <select name='SuburbSelected'>
             <option value="">-- Select Suburb--</option>
                     <?php foreach($results as $output) {?>
@@ -101,5 +114,6 @@
 				<div class="footer">
 					<p>Made by Benjamin Lynch and Preben Tjemsland</p>
 				</div>
+              
 			</body>
 </html>
