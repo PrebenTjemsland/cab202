@@ -1,7 +1,7 @@
 <?php
     //Establish connection    
-    include("config.php");
-    
+    include("config.php");                    
+    $counter = 0;
     $stmt = ("SELECT Suburb, WifiID FROM WifiSpots");
     try {
     $stmt=$pdo->prepare($stmt);
@@ -10,9 +10,6 @@
         } catch(PDOException $e) {
         echo 'ERROR: ' . $e->getMessage();
         }
-
-   
- session_start();
   if($_SERVER["REQUEST_METHOD"] == "POST") {
       $UserName = $_POST["username"];
       $Password = $_POST['password'];
@@ -21,19 +18,16 @@
        $stmt = $pdo->prepare("SELECT Username FROM users WHERE Username = '$UserName' and password = '$PasswordHashed'");
        $stmt->execute();
        $resultLogin = $stmt->fetchAll();
-       $counter = 0;
        foreach ($resultLogin as $test)
        {
            $counter++;
        }
        if($counter == 1) {
            $_SESSION['login_user'] = $UserName;
-           header("location: welcome.php");
-
            
        }
       else {
-         $error = "Your Login Name or Password is invalid";
+         echo  "Your Login Name or Password is invalid";
       }
   }
 ?>
@@ -50,31 +44,49 @@
 		 <!-- Makes the bar at the top with the logo and navigation -->	
 				<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-
+					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
 		<!-- Makes the boxes inside the bar and positions information-->	
-
+				Brisbane City Council Wifi Parks
 					<div class="topnav">
-						<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-						Brisbane City Council Wifi Parks
-						<a href="register.php">Register</a>		
+						<a class="active" href="searchpage.php">Home</a>
 						<a href="searchResult.php">Parks</a>
-						<a class="active" href="searchpage.html">Home</a>
-						
+						<a href="register.php">Register</a>
 					</div>
 				</div>
+              <!--Login or logout box depending on session status-->	  
                 
-                
+            <?php      
+        if (empty(isset($_SESSION['login_user']))) {
+            ?>
 			<div class="rightlog"> 
+                <div class="center3">
 				Log in Here
 				 <form action = "" method = "post">
-                     <input type="text" name="username" placeholder="username">
-					 <br>
-					 <br>
-                      <input type="text" name="password" placeholder="password">
-					<input type = "submit" value = " Submit "/><br /> 
+                     <input type="text" name="username">
+                      <input type="text" name="password">
+					<input type = "submit" value = "Log in"/><br /> 
+                     <?PHP 
+                        }
+                else{
+                     ?>
+                      <div class="rightlog"> 
+                     <form method="POST" action="logout.php">
+                        
+                         <input type="submit" value="Log out">
+                             
+                         </form>
+                           </div>
+                     <?PHP
+                    }
+                     ?>
+                     <?PHP 
+                     if (isset($_SESSION['login_user'])){
+                         echo "Login was successful";
+                     }
+                     ?>
 				</form>
 			</div>
-                
+                </div>
                 
 		<br>
 		<br>
