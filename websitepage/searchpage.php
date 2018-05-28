@@ -50,13 +50,16 @@
 		 <!-- Makes the bar at the top with the logo and navigation -->	
 				<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+
 		<!-- Makes the boxes inside the bar and positions information-->	
-				Brisbane City Council Wifi Parks
+
 					<div class="topnav">
-						<a class="active" href="searchpage.php">Home</a>
+						<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+						Brisbane City Council Wifi Parks
+						<a href="register.php">Register</a>		
 						<a href="searchResult.php">Parks</a>
-						<a href="register.php">Register</a>
+						<a class="active" href="searchpage.html">Home</a>
+						
 					</div>
 				</div>
                 
@@ -64,8 +67,10 @@
 			<div class="rightlog"> 
 				Log in Here
 				 <form action = "" method = "post">
-                     <input type="text" name="username">
-                      <input type="text" name="password">
+                     <input type="text" name="username" placeholder="username">
+					 <br>
+					 <br>
+                      <input type="text" name="password" placeholder="password">
 					<input type = "submit" value = " Submit "/><br /> 
 				</form>
 			</div>
