@@ -1,3 +1,7 @@
+<?php
+    //Establish connection    
+    include("config.php");   
+?>
 <!DOCTYPE html>
 <title>Register Page</title>
 	<html>
@@ -64,9 +68,6 @@
 <?php
 function insert()
 {
-//Establish connection    
-$pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //Make prepared statement
 $stmt = $pdo->prepare("INSERT into Users (UserName, FirstNames, LastName, Email, PostCode, DateOfBirth, Password, PasswordRe)
 Values (:UserName, :FirstNames, :LastName, :Email, :PostCode, :DateOfBirth, :Password, :PasswordRe)");
