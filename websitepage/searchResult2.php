@@ -24,8 +24,8 @@
         
 <?php
 //Establish connection    
-$pdo = new PDO('mysql:host=localhost:3306;dbname=cab230', 'min', 'Secret!');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try {
 $WifiID = $_GET['park'];
 $result = $pdo->query('SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
@@ -59,7 +59,7 @@ foreach ($result as $WifiSpots) {
  
    <?php
 //Establish connection    
-$pdo = new PDO('mysql:host=localhost:3306;dbname=cab230', 'min', 'Secret!');
+$pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try {
 $WifiID2 = $_GET['park'];
@@ -143,7 +143,7 @@ foreach ($result as $Reviews) {
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
     </script>
 
-        <div id="rating"><h2>Rating 3.5/5</h2></div>
+    
         <!-- Makes some space between the last item on the screen and the footer -->
         <div class="space"></div> 
 

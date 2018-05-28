@@ -22,7 +22,7 @@
 				<table class="Result">
 <?php
 //Establish connection    
-$pdo = new PDO('mysql:host=localhost:3306;dbname=cab230', 'min', 'Secret!');
+$pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try {
 if(isset($_REQUEST['submit'])&&("" != ($_POST['SuburbSelected']))){
@@ -75,10 +75,15 @@ foreach ($result as $WifiSpots) {
         "</td></tr>";
     }
  ?>
-				</table>
+    </table>
+        </div>
+    
+<br>
+<br>
+<br>
 				<br>
 				<br>
-		<!-- creates a map with googles API -->
+<!-- creates a map with googles API -->
 				<div id="map_1">
 					<script type="text/javascript" src="website1.js"></script>
 				</div>
@@ -89,6 +94,6 @@ foreach ($result as $WifiSpots) {
 				<div class="footer">
 				<p>Made by Benjamin Lynch and Preben Tjemsland</p>
 				</div>
-			</div>		
+			
 		</body>
 </html>

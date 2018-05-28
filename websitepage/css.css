@@ -1,8 +1,5 @@
-/*
-Places background image and locks it in place
-*/
 body {
-    background-image: url('http://www.mustdobrisbane.com/sites/default/files/styles/feature_full/public/captain-burke-park.jpg?itok=lu3pOock');
+    background-image: url("../Resources/bridge.jpg");
     background-repeat: no-repeat;
     background-size: 100% 500px;
 	background-color: #ccddff;
@@ -10,40 +7,26 @@ body {
 }
 
 input[type=text] {
-    width: 90%;
+    width: 150px;
+    height: 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 12px;
     background-color: white;
     background-image: url('searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-	margin: auto;
 }
 
-input[type=text]:focus {
-    width: 90%;	
-}
-
-/*
-Creates a white box with border centered in the middle of the screen
-*/
 .center {
     margin: auto;
     width: 60%;
-    height: 85px;
-    border: 5px solid #73AD21;
-    padding: 2px;
-	background-color: #FFFFFF;
+    border: 3px solid #73AD21;
+    padding: 10px;
 }
 
-/*
-creates a white box with a border centered in the middle of the screen but with different dimensions.
-*/
 .center1 {
     margin: auto;
     width: 60%;
@@ -52,10 +35,8 @@ creates a white box with a border centered in the middle of the screen but with 
     background-color: #ccddff;
     border: 3px solid #73AD21;
     padding: 5px;
-	background-color: #FFFFFF;
+	background-color: #FFFFFF;   
 }
-
-*{box-sizing: border-box;}
 
 .rightlog {
     margin-right: 2%;
@@ -67,18 +48,25 @@ creates a white box with a border centered in the middle of the screen but with 
 	float: right;
 }
 
+.center2 {  
+    margin: auto;
+    width: 60%;
+    border: 3px solid #000000;
+    padding: 5px;
+    background-color: #ccddff;
+    border: 3px solid #73AD21;
+    padding: 5px;
+	background-color: #FFFFFF;
+    
+}
+
+* {box-sizing: border-box;}
 
 
-/*
-Start of the top navigation bar
-*/
 .topnav {
   overflow: hidden;
   background-color: #e9e9e9;
-  margin-top: 10px;
-  float: right;
-  margin-right: 2%;
-  width: 32%;
+  width: 100%;
 }
 
 .topnav a {
@@ -86,10 +74,9 @@ Start of the top navigation bar
   display: block;
   color: black;
   text-align: center;
-  padding: 5% 5%;
+  padding: 14px 16px;
   text-decoration: none;
-  font-size: 100%;
-  width: 30%;
+  font-size: 17px;
 }
 
 .topnav a:hover {
@@ -128,8 +115,7 @@ Start of the top navigation bar
   background: #ccc;
 }
 
-/*@media screen and (max-width: 600px) {*/
-
+@media screen and (max-width: 600px) {
   .topnav .search-container {
     float: none;
   }
@@ -138,7 +124,7 @@ Start of the top navigation bar
     display: block;
     text-align: left;
     width: 100%;
-    margin: 50px;
+    margin: 0;
     padding: 14px;
   }
   .topnav input[type=text] {
@@ -146,9 +132,6 @@ Start of the top navigation bar
   }
 }
 
-/*
-Styling of Header 1.
-*/
 h1 {
     margin: 0;
     padding: 0 0 20px;
@@ -157,22 +140,22 @@ h1 {
     color: #fff;
     }
 
-/*
-creates a black box in the middel of the screen.
-*/
+
 .loginbox {
-    width: 28%;
+    width: 320px;
+    height: auto;
+    
     background: #000;
     color: #fff;
-    margin: auto;
+    top: 100%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 50px; 30px;
+    padding: 40px; 20px;
+
 }
 
-/*
-Removes margin and padding from p.
-Makes p bold
-*/
 .loginbox p{
     margin: 0;
     padding: 0;
@@ -185,10 +168,9 @@ Makes p bold
     font-size: 15px;
 }
 
-
-.loginbox input[type="text"], [type="email"], [type="password"], [type="number"]{
+.loginbox input[type="text"], [type="email"], [type="password"]{
     border: none;
-    border-bottom: 1px solid #fff;/* Makes the white lines under the input fields. */
+    border-bottom: 1px solid #fff;
     background: transparent; 
     outline: none;
     height: 40px;
@@ -196,9 +178,6 @@ Makes p bold
     font-size: 16px;
 }
 
-/*
-Makes the red button.
-*/
 .loginbox input[type="submit"]{
     border: none;
     outline: none;
@@ -207,36 +186,26 @@ Makes the red button.
     color: #fff;
     font-size: 18px;
 }
-/*
-Makes the red button orange on hover.
-*/
+
 .loginbox input[type="submit"]:hover{
     cursor: pointer;
     background: #ffc107;
     color: #fff;
 }
-/*
-makes tearms and conditin text grey*/
+
 .loginbox a{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color: #A9A9A9;
+    color: darkgray;
 }
 
-/*
-used instead or multiple <br>
-*/
 .space{
-    padding: 300px;
+    padding: 400px;
 }
-
-/*
-used instead or multiple <br>
-*/
 
 .spaceForm{
-    padding-top: 100px;
+    padding: 215px;
 }
 
 /*
@@ -267,19 +236,16 @@ Places a box used to place a google map inside of different size.
 Rezizing and moving map to the left of the screen for the SearchResult2 page. 
 */ 
  #map_2 {
-   width: 40%;
+   width: 50%;
    height: 400px;
-   background-color: gray;
-   left: 10%;
+   background-color: grey;
+   left: 5%;
+   width: 60%;
+   height: 400px;
+   background-color: grey;
+   left: 20%;
    float:left;
    display:inline-block;
-   overflow: hidden;
-   border: 3px solid #000000;
-   padding: 5px;
-   background-color: #ccddff;
-   border: 3px solid #73AD21;
-   padding: 5px;
-   background-color: #FFFFFF;
  }
 
  /*
@@ -403,6 +369,10 @@ Styling for the table cells to give padding
 */
 td {
     padding: 15px;
+}
+
+.Center2 td{
+     width: 50%;
 }
 
 #contentTable {
