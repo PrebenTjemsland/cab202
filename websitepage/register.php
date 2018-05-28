@@ -53,7 +53,7 @@
 function insert()
 {
 //Establish connection    
-$pdo = new PDO('mysql:host=localhost:3306;dbname=cab230', 'min', 'Secret!');
+$pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //Make prepared statement
 $stmt = $pdo->prepare("INSERT into Users (UserName, FirstNames, LastName, Email, PostCode, DateOfBirth, Password, PasswordRe, Salt)
