@@ -2,6 +2,7 @@
     //Establish connection    
     include("config.php");   
 ?>
+<script type="text/javascript" src="website1.js"></script>
 <!DOCTYPE html>
 <title>Register Page</title>
 	<html>
@@ -30,11 +31,11 @@
 				<form method="post" action="register.php">
 				
 					<p>User name</p>
-						<input type="text" name="UserName" pattern="[A-Za-z]{1,}" placeholder="User Name" required>
+						<input type="text" name="UserName" pattern="[A-Za-z]{1,}" placeholder="User Name" title="Must contain at least only letters" required>
 					<p>First Name</p>
-						<input type="text" name="FirstNames" pattern="[A-Za-z]{1,}" placeholder="First Name" required>
+						<input type="text" name="FirstNames" pattern="[A-Za-z]{1,}" placeholder="First Name" title="Must contain at least only letters" required>
 					<p>Last Name</p>
-						<input type="text" name="LastName" pattern="[A-Za-z]{1,}" placeholder="Last Name" required> 
+						<input type="text" name="LastName" pattern="[A-Za-z]{1,}" placeholder="Last Name" title="Must contain at least only letters" required> 
 					<p>Email</p>
 						<input type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
 					<p>Postcode</p>
@@ -51,8 +52,7 @@
 						<input type="password" name="PasswordRe" placeholder="Repeat Password" id="Repeat" onkeyup='check();' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
 					<span id='message'></span>	
 					</label>
-						
-						
+											
 						
 					<br/>
     <!-- Creates the tearm and contition text and tick box. makes Terms and condition a clickable link -->	
