@@ -70,6 +70,7 @@
                 else{
                      ?>
                       <div class="rightlog"> 
+                          <h3>Welcome</h3> <p><?PHP echo $_SESSION['login_user'] ?></p>
                      <form method="POST" action="logout.php">
                         
                          <input type="submit" value="Log out">
