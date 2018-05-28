@@ -8,14 +8,14 @@
 			<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
 				
-					<div class="topnav">
+				<div class="topnav">
 					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-				Brisbane City Council Wifi Parks
-			<a href="register.php">Register</a>		
-			<a href="searchResult.php">Parks</a>
-			<a href="searchpage.php">Home</a>
-		</div>
-		</div>
+						Brisbane City Council Wifi Parks
+					<a href="register.php">Register</a>		
+					<a href="searchResult.php">Parks</a>
+					<a href="searchpage.php">Home</a>		
+				</div>
+			</div>
 		
 		<br>
 		<br>
@@ -79,7 +79,7 @@ echo "<table>
 </th><th>Name 
 </th><th>Rating 
 </th></tr>";
-foreach ($result as $Reviews) {
+foreach ($stmt as $Reviews) {
     echo
         "<tr><td>".$Reviews['Re_Username'].
         "</td><td>".$Reviews['Content'].
@@ -98,8 +98,8 @@ foreach ($result as $Reviews) {
 <a>Leave a review</a>
     <br>
 <form method="post" action="">
-     <input type="text" name="Content" placeholder="Review">
-    <select name='Rating'>
+		<textarea type="text" name="Content" placeholder="Review" style="width: 80%; height: 200px;"> </textarea>
+			<select name='Rating'>
                     <option value="">--Choose rating--</option>
                     <option Value="1">-1-</option>
                     <option Value="2">-2-</option>

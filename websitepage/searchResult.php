@@ -60,8 +60,8 @@ echo "{$e->getMessage()}";
 }
 echo "<table>
 <tr><th>Name
-</th><th>Adress
-</th><th>Subburb
+</th><th>Address
+</th><th>Suburb
 </th><th>Rating
 </th><th>More info
 </th></tr>";
@@ -85,8 +85,8 @@ foreach ($result as $WifiSpots) {
 				<br>
 				<br>
 <!-- creates a map with googles API -->
-				<div id="map_1">
-					<script type="text/javascript" src="website1.js"></script>
+				<div id="map">
+					<script type="text/javascript" src="website.js"></script>
 				</div>
 				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap"></script>
 					<div class="spaceForm"></div> 
