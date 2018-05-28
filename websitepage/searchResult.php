@@ -1,3 +1,8 @@
+<?php
+    //Establish connection    
+    include("config.php");   
+?>
+
 <html>
 	<title>Search Results</title>
 		<head>
@@ -7,13 +12,12 @@
 		<!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				
+				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+		Brisbane City Council Wifi Parks
 				<div class="topnav">
-					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-					Brisbane City Council Wifi Parks
-					<a href="register.php">Register</a>
-					<a class="active" href="searchResult.php">Parks</a>
 					<a href="searchpage.php">Home</a>
+					<a class="active" href="searchResult.php">Parks</a>
+					<a href="register.php">Register</a>
 				</div>
 			</div>
 			<br>
@@ -22,9 +26,6 @@
 			<div class="center1"> 
 				<table class="Result">
 <?php
-//Establish connection    
-$pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 try {
 if(isset($_REQUEST['submit'])&&("" != ($_POST['SuburbSelected']))){
     $Suburb=$_POST['SuburbSelected'];
@@ -60,8 +61,8 @@ echo "{$e->getMessage()}";
 }
 echo "<table>
 <tr><th>Name
-</th><th>Address
-</th><th>Suburb
+</th><th>Adress
+</th><th>Subburb
 </th><th>Rating
 </th><th>More info
 </th></tr>";
@@ -85,8 +86,8 @@ foreach ($result as $WifiSpots) {
 				<br>
 				<br>
 <!-- creates a map with googles API -->
-				<div id="map">
-					<script type="text/javascript" src="website.js"></script>
+				<div id="map_1">
+					<script type="text/javascript" src="website1.js"></script>
 				</div>
 				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap"></script>
 					<div class="spaceForm"></div> 
