@@ -4,6 +4,7 @@
 		<head>
 			<link href="css.css" rel="stylesheet" type="text/css">
 		</head>
+		
 		<body>
 		<!-- Makes the bar at the top with the logo and navigation -->	
 		<div class="center">
@@ -23,22 +24,32 @@
     <!-- Adds all input to the registerbox with HTML5 validation -->	
 			<h1>Register</h1>
 				<form method="post" action="register.php">
+				
 					<p>User name</p>
-						<input type="text" name="UserName" pattern="[A-Za-z]{0-25}" placeholder="User Name" required>
+						<input type="text" name="UserName" pattern="[A-Za-z]{1,}" placeholder="User Name" required>
 					<p>First Name</p>
-						<input type="text" name="FirstNames" pattern="[A-Za-z]{0-25}" placeholder="First Name" required>
+						<input type="text" name="FirstNames" pattern="[A-Za-z]{1,}" placeholder="First Name" required>
 					<p>Last Name</p>
-						<input type="text" name="LastName" pattern="[A-Za-z]{0-25}" placeholder="Last Name" required> 
+						<input type="text" name="LastName" pattern="[A-Za-z]{1,}" placeholder="Last Name" required> 
 					<p>Email</p>
-						<input type="text" name="Email" placeholder="Email" required>
+						<input type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
 					<p>Postcode</p>
-						<input type="number" pattern="[0-9]{4}" name="PostCode" placeholder="Postcode" title="A four digit postcode is required." required>
+						<input type="text" pattern="[0-9]{4}" name="PostCode" placeholder="Postcode" title="A four digit postcode is required." required>
 					<p>Date of birth</p>
-						<input type="date" name="DateOfBirth" placeholder="Date of birth" required>    
-					<p>Password</p>
-						<input type="password" name="Password" placeholder="Password" required>
-					<p>Repeat Password</p>
-						<input type="password" name="PasswordRe" placeholder="Repeat Password" >
+						<input type="date" name="DateOfBirth" placeholder="Date of birth" required>  
+					
+						<script type="text/javascript" src="website.js"></script>
+					<label>Password
+						<input type="password" name="Password" placeholder="Password" id="Password" onkeyup='check();' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+					</label>
+					<br>
+					<label>Repeat Password
+						<input type="password" name="PasswordRe" placeholder="Repeat Password" id="Repeat" onkeyup='check();' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+					<span id='message'></span>	
+					</label>
+						
+						
+						
 					<br/>
     <!-- Creates the tearm and contition text and tick box. makes Terms and condition a clickable link -->	
 					<a> Do you accept our</a>
@@ -57,8 +68,8 @@ function insert()
 $pdo = new PDO('mysql:host=cab230.sef.qut.edu.au:3306 ;dbname=n10240047', 'n10240047', 'kristiansand');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //Make prepared statement
-$stmt = $pdo->prepare("INSERT into Users (UserName, FirstNames, LastName, Email, PostCode, DateOfBirth, Password, PasswordRe, Salt)
-Values (:UserName, :FirstNames, :LastName, :Email, :PostCode, :DateOfBirth, :Password, :PasswordRe, :Salt)");
+$stmt = $pdo->prepare("INSERT into Users (UserName, FirstNames, LastName, Email, PostCode, DateOfBirth, Password, PasswordRe)
+Values (:UserName, :FirstNames, :LastName, :Email, :PostCode, :DateOfBirth, :Password, :PasswordRe)");
 //Bind parameters that will be inserted into the statement
 $stmt->bindParam(":UserName", $UserName);
 $stmt->bindParam(":FirstNames", $FirstNames);
@@ -68,7 +79,7 @@ $stmt->bindParam(":PostCode", $PostCode);
 $stmt->bindParam(":DateOfBirth", $DateOfBirth);
 $stmt->bindParam(":Password", $PasswordHashed);
 $stmt->bindParam(":PasswordRe", $PasswordReHashed);
-$stmt->bindParam(":Salt", $Salt);
+
 //Getting variables ready to be binded    
 $UserName = $_POST['UserName'];
 $FirstNames = $_POST['FirstNames'];
@@ -80,8 +91,8 @@ $Password = $_POST['Password'];
 $PasswordRe = $_POST['PasswordRe'];
 //Hashing passwords
 $Salt = openssl_random_pseudo_bytes(64);
-$PasswordHashed = hash("sha512", $Password . $Salt);
-$PasswordReHashed = hash("sha512", $PasswordRe . $Salt);
+$PasswordHashed = hash("sha512", $Password );
+$PasswordReHashed = hash("sha512", $PasswordRe);
 //Execute prepared statement
 $stmt->execute();
 //Run insert() when submit is pressed    
