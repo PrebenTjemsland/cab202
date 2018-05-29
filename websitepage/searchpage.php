@@ -1,6 +1,21 @@
 <?php
     //Establish connection    
-    include("config.php");                    
+    include("config.php");  
+        try{
+     $sth = $pdo->query("SELECT wifiID, longitude FROM wifispots");
+     $youapp = $sth->fetchAll();
+     echo '<script type="text/javascript">';
+     echo  "var long1 =".json_encode( $youapp );  
+     echo '</script>';
+     $sth = $pdo->query("SELECT latitude FROM wifispots");
+     $youapp1 = $sth->fetchAll();
+     echo '<script type="text/javascript">';
+     echo  "var lat1 =".json_encode( $youapp1 );  
+     echo '</script>';
+    } 
+     catch (Exception $e) {
+     echo $e->getMessage();
+    }
     $counter = 0;
     $stmt = ("SELECT Suburb, WifiID FROM WifiSpots");
     try {
