@@ -13,8 +13,7 @@
 			<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
 		<!-- Places and Positions the Logo in the nav bar -->
 				<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
-					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-					Brisbane City Council Wifi Parks
+					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="340">
 					<a href="register.php">Register</a>
 					<a class="active" href="searchResult.php">Parks</a>
 					<a href="searchpage.php">Home</a>
