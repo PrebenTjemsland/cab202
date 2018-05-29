@@ -13,7 +13,7 @@
 			<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
 		<!-- Places and Positions the Logo in the nav bar -->	
 				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-		Brisbane City Council Wifi Parks
+				Brisbane City Council Wifi Parks
 				<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
 					<a href="searchpage.php">Home</a>
 					<a class="active" href="searchResult.php">Parks</a>
@@ -23,8 +23,8 @@
 			<br>
 			<br>
 			<br>
-			<div class="center1" itemscope itemtype="http://schema.org/ItemPage" about="results"> 
-				<table class="Result">
+				<div class="center1" itemscope itemtype="http://schema.org/ItemPage" about="results"> 
+					<table class="Result">
 <?php
 try {
 if(isset($_REQUEST['submit'])&&("" != ($_POST['SuburbSelected']))){
@@ -78,24 +78,23 @@ foreach ($result as $WifiSpots) {
     }
  ?>
     </table>
-        </div>
+				</div>
     
-<br>
-<br>
-<br>
+				<br>
+				<br>
+				<br>
 				<br>
 				<br>
 <!-- creates a map with googles API -->
 				<div id="map_1" itemscope itemtype="http://schema.org/Map" itemprop="map" maptype="Selected Park">
 					<script type="text/javascript" src="website1.js"></script>
 				</div>
-				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap"></script>
-					<div class="spaceForm"></div> 
-					<div class="spaceForm"></div> 
-	<!-- creates a Footer to stay at the bottom of the page-->
+					<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap"></script>
+				<div class="spaceForm"></div> 
+				<div class="spaceForm"></div> 
+<!-- creates a Footer to stay at the bottom of the page-->
 				<div class="footer" itemscope itemtype="http://schema.org/WPFooter" itemprop="footer" about="Made by">
 				<p>Made by Benjamin Lynch and Preben Tjemsland</p>
 				</div>
-			
 		</body>
 </html>
