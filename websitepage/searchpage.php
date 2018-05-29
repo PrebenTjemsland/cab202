@@ -75,11 +75,12 @@
             ?>
 			<div class="rightlog" itemscope itemtype="http://schema.org/ProfilePage" about="login"> 
                 <div class="center3" itemtype="http://schema.org/ProfilePage" about="login">
-				Log in Here
+				<h4>Log in Here</h4>
 					<form action = "" method = "post">
-						<input type="text" name="username">
-						<input type="text" name="password">
-						<input type = "submit" value = "Log in"/><br /> 
+						<input type="text" name="username" placeholder="Username">
+						<input type="password" name="password" placeholder="Password">
+						<br><br>
+						<input type = "submit" value = "Log in" align="middle"><br /> 
 			 <?PHP 
 					}
 			else{
