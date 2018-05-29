@@ -34,14 +34,13 @@ try{
         <!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-				Brisbane City Council Wifi Parks
-					<div class="topnav">
-			<a href="searchpage.php">Home</a>
-			<a href="searchResult.php">Parks</a>
-			<a href="register.php">Register</a>
-		</div>
-		</div>
+				<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
+					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="340">
+					<a href="register.php">Register</a>
+					<a href="searchResult.php">Parks</a>
+					<a href="searchpage.php">Home</a>
+				</div>
+			</div>
 		
 		<br>
 		<br>

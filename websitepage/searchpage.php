@@ -62,7 +62,6 @@
 		<!-- Makes the boxes inside the bar and positions information-->	
 				<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
 					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="340">
-					
 					<a href="register.php">Register</a>
 					<a href="searchResult.php">Parks</a>
 					<a class="active" href="searchpage.php">Home</a>
