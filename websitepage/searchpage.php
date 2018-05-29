@@ -42,12 +42,12 @@
 			</head>
 			<body >
 		 <!-- Makes the bar at the top with the logo and navigation -->	
-				<div class="center">
+				<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
 		<!-- Places and Positions the Logo in the nav bar -->	
 					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
 		<!-- Makes the boxes inside the bar and positions information-->	
 				Brisbane City Council Wifi Parks
-					<div class="topnav">
+					<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
 						<a class="active" href="searchpage.php">Home</a>
 						<a href="searchResult.php">Parks</a>
 						<a href="register.php">Register</a>
@@ -58,8 +58,8 @@
             <?php      
         if (empty(isset($_SESSION['login_user']))) {
             ?>
-			<div class="rightlog"> 
-                <div class="center3">
+			<div class="rightlog" itemscope itemtype="http://schema.org/ProfilePage" about="login"> 
+                <div class="center3" itemtype="http://schema.org/ProfilePage" about="login">
 				Log in Here
 				 <form action = "" method = "post">
                      <input type="text" name="username">
@@ -94,7 +94,7 @@
 		<br>
 		<br>
 
-			<div class="center1">
+			<div class="center1" itemscope itemtype="http://schema.org/SiteNavigationElement" about="search">
                 Search For a local Wifi Park:
 				<form method="post" action="searchResult.php">
                   <select name='SuburbSelected'>
@@ -122,14 +122,14 @@
 				
 		<!-- creates a map with googles API -->
 				<div id="map">
-					<script type="text/javascript" src="website.js">
+					<script type="text/javascript" src="website.js" itemscope itemtype="http://schema.org/Map" itemprop="map" maptype="brisbane">
 					</script>
 				</div>
 				
 				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
 				</script>
 	<!-- creates a Footer to stay at the bottom of the page-->
-				<div class="footer">
+				<div class="footer" itemscope itemtype="http://schema.org/WPFooter" itemprop="footer" about="Made by">
 					<p>Made by Benjamin Lynch and Preben Tjemsland</p>
 				</div>
               
