@@ -25,14 +25,12 @@ input[type=text] {
     width: 60%;
     border: 3px solid #73AD21;
     padding: 10px;
+	background-color: #ccddff;
 }
 
 .center1 {
     margin: auto;
     width: 60%;
-    border: 3px solid #000000;
-    padding: 5px;
-    background-color: #ccddff;
     border: 3px solid #73AD21;
     padding: 5px;
 	background-color: #FFFFFF;   
@@ -51,9 +49,6 @@ input[type=text] {
 .center2 {  
     margin: auto;
     width: 60%;
-    border: 3px solid #000000;
-    padding: 5px;
-    background-color: #ccddff;
     border: 3px solid #73AD21;
     padding: 5px;
 	background-color: #FFFFFF;
@@ -238,11 +233,10 @@ Rezizing and moving map to the left of the screen for the SearchResult2 page.
  #map_2 {
    width: 50%;
    height: 400px;
-   background-color: grey;
    left: 5%;
    width: 60%;
    height: 400px;
-   background-color: grey;
+   background-color: gray;
    left: 20%;
    float:left;
    display:inline-block;

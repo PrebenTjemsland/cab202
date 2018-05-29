@@ -37,8 +37,8 @@ echo "{$e->getMessage()}";
 }
 echo "<table>
 <tr><th>Name
-</th><th>Adress
-</th><th>Subburb 
+</th><th>Address
+</th><th>Suburb 
 </th><th>Rating
 </th></tr>";
 foreach ($result as $WifiSpots) {
