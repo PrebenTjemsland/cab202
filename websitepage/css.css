@@ -130,10 +130,9 @@ Creates the registration box
     top: 70%;
     left: 50%;
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     box-sizing: border-box;
-    padding: 40px; 20px;
-
+    padding: 40px;
 }
 
 .loginbox p{
@@ -189,7 +188,7 @@ Styles submit button hover effects
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color: darkgray;
+    color: gray;
 }
 
 /*
@@ -255,7 +254,6 @@ Makes the name of wifi locations break to newline before to fit the better insid
 
 h3{
     max-width: 95%;
-    word-wrap:break-word;
     text-align: center;
     vertical-align: middle;
 }
@@ -287,7 +285,6 @@ Makes the box for reviews on the right side of the map.
 	float: right;
     display:inline-block;
     overflow: hidden;
-    align-content: center;
 }
 /*
 Makes a box with white background around the content inside contentReview.
@@ -330,7 +327,6 @@ and gives it a ligthblue background with black boarder.
     background-color: white;
     float:right;
     margin-right: 10%;
-    align-content: center;
 }
 /*
 Positions the box with the name of the current wifi location above the map.
@@ -345,8 +341,6 @@ And gives it a ligthblue background with black boarder.
     height: 75px;
     border:3px solid #73AD21;
     background-color: white;
-    align-content: center;
-	
 }
 
 /* 
