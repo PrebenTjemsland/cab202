@@ -11,13 +11,13 @@
 		<body>
 		<!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
-		<!-- Places and Positions the Logo in the nav bar -->	
-				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-				Brisbane City Council Wifi Parks
+		<!-- Places and Positions the Logo in the nav bar -->
 				<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
-					<a href="searchpage.php">Home</a>
-					<a class="active" href="searchResult.php">Parks</a>
+					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+					Brisbane City Council Wifi Parks
 					<a href="register.php">Register</a>
+					<a class="active" href="searchResult.php">Parks</a>
+					<a href="searchpage.php">Home</a>
 				</div>
 			</div>
 			<br>
@@ -61,8 +61,8 @@ echo "{$e->getMessage()}";
 }
 echo "<table>
 <tr><th>Name
-</th><th>Adress
-</th><th>Subburb
+</th><th>Address
+</th><th>Suburb
 </th><th>Rating
 </th><th>More info
 </th></tr>";

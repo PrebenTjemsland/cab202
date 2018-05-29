@@ -44,13 +44,13 @@
 		<!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
 		<!-- Makes the boxes inside the bar and positions information-->	
-				Brisbane City Council Wifi Parks
 				<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
-					<a class="active" href="searchpage.php">Home</a>
-					<a href="searchResult.php">Parks</a>
+					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+					Brisbane City Council Wifi Parks
 					<a href="register.php">Register</a>
+					<a href="searchResult.php">Parks</a>
+					<a class="active" href="searchpage.php">Home</a>
 				</div>
 			</div>
 		<!--Login or logout box depending on session status-->	  

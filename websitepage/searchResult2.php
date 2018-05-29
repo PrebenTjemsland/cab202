@@ -11,21 +11,20 @@
 		<body>
         <!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
-		<!-- Places and Positions the Logo in the nav bar -->	
-				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70" >
-				Brisbane City Council Wifi Parks
+		<!-- Places and Positions the Logo in the nav bar -->
 					<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
-			<a href="searchpage.php">Home</a>
-			<a href="searchResult.php">Parks</a>
-			<a href="register.php">Register</a>
-		</div>
-		</div>
-		
-		<br>
-		<br>
-		<br> 
-<div class="center2" itemscope itemtype="http://schema.org/ItemPage"> 
-    <table id="Result2" itemscope="http://schema.org/Table" about="Reviews">
+						<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70" >
+						Brisbane City Council Wifi Parks
+						<a href="register.php">Register</a>
+						<a href="searchResult.php">Parks</a>
+						<a href="searchpage.php">Home</a>
+					</div>
+			</div>
+			<br>
+			<br>
+			<br> 
+			<div class="center2" itemscope itemtype="http://schema.org/ItemPage"> 
+				<table id="Result2" itemscope="http://schema.org/Table" about="Reviews">
         
 <?php
 try {
@@ -52,12 +51,13 @@ foreach ($result as $WifiSpots) {
         "</td></tr>";
     }
  ?>
-    </table>
-        </div>
-      
-    <br> <br> <br>
-<div class="center2" itemscope="http://schema.org/Review"> 
-    <table id="Review" itemscope itemtype="http://schema.org/Review" itemreviewed="Wifi Parks">
+				</table>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="center2" itemscope="http://schema.org/Review"> 
+				<table id="Review" itemscope itemtype="http://schema.org/Review" itemreviewed="Wifi Parks">
  
    <?php
 try {
@@ -86,13 +86,11 @@ foreach ($stmt as $Reviews) {
         "</td></tr>";
     }     
   ?>                 
-</table>        
-</div> 
-        
-   <br>     
-   <br>     
-   <br>    
-            
+				</table>        
+			</div> 
+		   <br>     
+		   <br>     
+		   <br>               
 <?php      
         if (empty(isset($_SESSION['login_user']))) {
             ?> 
@@ -122,8 +120,8 @@ foreach ($stmt as $Reviews) {
         }
         ?>
         
-</form>   
-        </div>
+				</form>   
+			</div>
           <?PHP           
     if(isset($_POST['submitRating'])) {
 
@@ -142,31 +140,24 @@ foreach ($stmt as $Reviews) {
     }
     
     ?>
-    
-   <br>     
-   <br>     
-   <br> 
+		   <br>     
+		   <br>     
+		   <br> 
         <!-- creates a map with googles API -->
-		<div id="map_2" itemscope itemtype="http://schema.org/Map" itemprop="map" maptype="Selected Park">
-		<script type="text/javascript" src="website2.js">
-    </script>
-	</div>
-       
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
-    </script>
-
-    
+			<div id="map_2" itemscope itemtype="http://schema.org/Map" itemprop="map" maptype="Selected Park">
+				<script type="text/javascript" src="website2.js">
+				</script>
+			</div>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3h8y5u1ZuB8YNgthTMPxmmi_EBiDKAeY&callback=initMap">
+			</script>
         <!-- Makes some space between the last item on the screen and the footer -->
-        <div class="space"></div> 
-
-
+			<div class="space"></div> 
 		<!-- creates a Footer to stay at the bottom of the page-->
-		<div class="footer" itemscope itemtype="http://schema.org/WPFooter" itemprop="footer" about="Made by" >
-			<p>Made by Benjamin Lynch and Preben Tjemsland</p>
-		</div>
+			<div class="footer" itemscope itemtype="http://schema.org/WPFooter" itemprop="footer" about="Made by" >
+				<p>Made by Benjamin Lynch and Preben Tjemsland</p>
+			</div>
 		
-	</body>
+		</body>
 </html>
 		
 	
