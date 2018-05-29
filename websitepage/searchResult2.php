@@ -10,11 +10,11 @@
 		</head>
 		<body>
         <!-- Makes the bar at the top with the logo and navigation -->	
-			<div class="center">
+			<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70" >
 				Brisbane City Council Wifi Parks
-					<div class="topnav">
+					<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
 			<a href="searchpage.php">Home</a>
 			<a href="searchResult.php">Parks</a>
 			<a href="register.php">Register</a>
@@ -24,8 +24,8 @@
 		<br>
 		<br>
 		<br> 
-<div class="center2"> 
-    <table id="Result2">
+<div class="center2" itemscope itemtype="http://schema.org/ItemPage"> 
+    <table id="Result2" itemscope="http://schema.org/Table" about="Reviews">
         
 <?php
 try {
@@ -57,7 +57,7 @@ foreach ($result as $WifiSpots) {
       
     <br> <br> <br>
 <div class="center2"> 
-    <table id="Review">
+    <table id="Review" itemscope itemtype="http://schema.org/Review" itemreviewed="Wifi Parks">
  
    <?php
 try {
@@ -147,7 +147,7 @@ foreach ($stmt as $Reviews) {
    <br>     
    <br> 
         <!-- creates a map with googles API -->
-		<div id="map_2">
+		<div id="map_2" itemscope itemtype="http://schema.org/Map" itemprop="map" maptype="Selected Park">
 		<script type="text/javascript" src="website2.js">
     </script>
 	</div>
@@ -162,7 +162,7 @@ foreach ($stmt as $Reviews) {
 
 
 		<!-- creates a Footer to stay at the bottom of the page-->
-		<div class="footer">
+		<div class="footer" itemscope itemtype="http://schema.org/WPFooter" itemprop="footer" about="Made by" >
 			<p>Made by Benjamin Lynch and Preben Tjemsland</p>
 		</div>
 		
