@@ -12,9 +12,9 @@
 		
 		<body>
 		<!-- Makes the bar at the top with the logo and navigation -->	
-		<div class="center">
+		<div class="center" itemscope itemtype="http://schema.org/WPHeader" itemprop="navigation">
 			
-					<div class="topnav">
+					<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
 						<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
 						Brisbane City Council Wifi Parks
 						<a class="active" href="register.php">Register</a>
@@ -25,10 +25,10 @@
 		<!-- adds padding over the registerbox-->	    
 
 		<!-- creates a box -->	
-		<div class="loginbox">
+		<div class="loginbox" itemscope itemtype="http://schema.org/ProfilePage" about="Register">
     <!-- Adds all input to the registerbox with HTML5 validation -->	
 			<h1>Register</h1>
-				<form method="post" action="register.php">
+				<form method="post" action="register.php" about="register" about="account">
 				
 					<p>User name</p>
 						<input type="text" name="UserName" pattern="[A-Za-z]{1,}" placeholder="User Name" title="Must contain at least only letters" required>
