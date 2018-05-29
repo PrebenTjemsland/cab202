@@ -96,7 +96,7 @@
                      ?>
                      <?PHP 
                      if (isset($_SESSION['login_user'])){
-                         echo "Login was successful";
+
                      }
                      ?>
 					</form>
