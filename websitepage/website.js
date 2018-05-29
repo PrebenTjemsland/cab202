@@ -1,13 +1,26 @@
-      function initMap() {
-        var latlong = {lat: -27.4698, lng: 153.0251};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: latlong
-        });
+function markers(map){
+    for (i = 0; i < lat1.length; i++){       
+        var lat2 = parseFloat(lat1[i][0]);
+        var long2 = parseFloat(long1[i][1]);
+        var latlong1 = {lat: lat2 , lng: long2}; 
         var marker = new google.maps.Marker({
-          position: latlong,
-          map: map
+          position: latlong1,
+          map: map,
+          title: long1[i][0] 
         });
+        }
+       }
+
+function initMap() {
+    var map;
+    var latlong1 = {lat: -27.47091173 , lng: 153.02245980};
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: latlong1
+        });
+         
+       markers(map);
+        
       }
 
 
