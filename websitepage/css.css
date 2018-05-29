@@ -22,7 +22,7 @@ input[type=text] {
     background-image: url('searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 12px
 }
 /*
 Places a box in the center or the page for information
@@ -223,7 +223,7 @@ Box used to place the map inside.
 Places a box used to place a google map inside of different size.
 */
   #map_1 {
-   width: 50%;
+   width: 60%;
    height: 400px;
    background-color: gray;
    left: 20%;
@@ -411,4 +411,8 @@ Positions and gives size to login button on home page
 .rightlog input[type="submit"]{
 	width:30%;
 	margin-left:32.5%;
+}
+
+.rightlog p {
+    text-indent: 5%;
 }
