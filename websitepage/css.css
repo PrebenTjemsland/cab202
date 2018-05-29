@@ -231,9 +231,6 @@ Places a box used to place a google map inside of different size.
 Rezizing and moving map to the left of the screen for the SearchResult2 page. 
 */ 
  #map_2 {
-   width: 50%;
-   height: 400px;
-   left: 5%;
    width: 60%;
    height: 400px;
    background-color: gray;
