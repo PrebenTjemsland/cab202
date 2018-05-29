@@ -56,7 +56,7 @@ foreach ($result as $WifiSpots) {
         </div>
       
     <br> <br> <br>
-<div class="center2"> 
+<div class="center2" itemscope="http://schema.org/Review"> 
     <table id="Review" itemscope itemtype="http://schema.org/Review" itemreviewed="Wifi Parks">
  
    <?php
