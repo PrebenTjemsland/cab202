@@ -13,11 +13,12 @@
 		<!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				<div class="topnav" itemscope itemtype="http://schema.org/SiteNavigationElement" itemprop="navigation" about="header">
-					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="340">
-					<a href="register.php">Register</a>
-					<a class="active" href="searchResult.php">Parks</a>
+				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
+		Brisbane City Council Wifi Parks
+				<div class="topnav">
 					<a href="searchpage.php">Home</a>
+					<a class="active" href="searchResult.php">Parks</a>
+					<a href="register.php">Register</a>
 				</div>
 			</div>
 			<br>
@@ -26,6 +27,7 @@
 			<div class="center1"> 
 				<table class="Result">
 <?php
+$empty = false;
 try {
 if(isset($_REQUEST['submit'])&&("" != ($_POST['SuburbSelected']))){
     $Suburb=$_POST['SuburbSelected'];
@@ -33,6 +35,15 @@ if(isset($_REQUEST['submit'])&&("" != ($_POST['SuburbSelected']))){
     $result = $pdo->query(" SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
                             FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID 
                             WHERE Suburb like '%".$Suburb."%' GROUP BY WifiID");
+                            $resultWifi = $result;
+                            $resultWifiID = $resultWifi->fetchAll();
+            echo '<script type="text/javascript">';
+            echo  "var WifiID =".json_encode($resultWifiID);  
+            echo '</script>';
+     $result = $pdo->query(" SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
+                            FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID 
+                            WHERE Suburb like '%".$Suburb."%' GROUP BY WifiID");
+       
 }
     else if(isset($_REQUEST['submit'])&&("" != ($_POST['WifiID']))){
      $WifiID=$_POST['WifiID'];
@@ -40,33 +51,66 @@ if(isset($_REQUEST['submit'])&&("" != ($_POST['SuburbSelected']))){
      $result = $pdo->query(" SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
                              FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID 
                              WHERE WifiID like '%".$WifiID."%' GROUP BY WifiID");  
+                                if ($result->rowCount() > 0) {    
                             $resultWifi = $result;
                             $resultWifiID = $resultWifi->fetchAll();
-            echo '<script type="text/javascript">';
-            echo  "var WifiID =".json_encode($resultWifiID);  
-            echo '</script>';
+                                    echo '<script type="text/javascript">';
+                                    echo  "var WifiID =".json_encode($resultWifiID);  
+                                    echo '</script>';
+                                } else {
+                                    ?> 
+                                    <h3> No results found for this search</h3>
+                    
+                                    <?PHP
+                                    $empty = true;
+                                    $result = $pdo->query("SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating),                                   ROUND(AVG(Rating),2) AS AverageRating
+                                                          FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID GROUP BY WifiID");
+                                    $resultWifi = $result;
+                                    $resultWifiID = $resultWifi->fetchAll();
+                                    echo '<script type="text/javascript">';
+                                    echo  "var WifiID =".json_encode($resultWifiID);  
+                                    echo '</script>';
+                                        }
+
         $result = $pdo->query(" SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
                              FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID 
                              WHERE WifiID like '%".$WifiID."%' GROUP BY WifiID");  
     }
     
         else if(isset($_REQUEST['submit'])&&("" != ($_POST['Rating']))){
-     $Rating=$_POST['Rating'];
-
-     $result = $pdo->query(" SELECT WifiID, Adress, Suburb, Latitude, Longitude,(SELECT max(Rating), ROUND(AVG(Rating),2) AS AverageRating 
-    FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID ), max(Rating), ROUND(AVG(Rating),2) AS AverageRating
-                             FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID 
-                             WHERE Rating >= '".$Rating."' GROUP BY WifiID");   
+                    $Rating=$_POST['Rating'];
+                    $result = $pdo->query("SELECT WifiID, ROUND(AVG(Rating),2) AS AverageRating, Adress, Suburb, Latitude, Longitude,                         max(Rating) 
+                                          FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID   
+                                          GROUP BY WifiID
+					                      HAVING AverageRating  >='".$Rating."';");   
+            $resultWifi = $result;
+            $resultWifiID = $resultWifi->fetchAll();
+            echo '<script type="text/javascript">';
+            echo  "var WifiID =".json_encode($resultWifiID);  
+            echo '</script>';
+              $result = $pdo->query("SELECT WifiID, ROUND(AVG(Rating),2) AS AverageRating, Adress, Suburb, Latitude, Longitude,
+                                    max(Rating) 
+                                    FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID   
+                                    GROUP BY WifiID
+			                         HAVING AverageRating  >='".$Rating."';");  
     }
     
 else{
     $result = $pdo->query("SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
-FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID GROUP BY WifiID");
+                          FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID GROUP BY WifiID");
+        $resultWifi = $result;
+        $resultWifiID = $resultWifi->fetchAll();
+            echo '<script type="text/javascript">';
+            echo  "var WifiID =".json_encode($resultWifiID);  
+            echo '</script>';
+    $result = $pdo->query("SELECT WifiID, Adress, Suburb, Latitude, Longitude, max(Rating), ROUND(AVG(Rating),2) AS AverageRating
+                          FROM WifiSpots LEFT JOIN Reviews on Re_WifiID = WifiID GROUP BY WifiID");
     
 }
 } catch (PDOException $e) {
 echo "{$e->getMessage()}";
 }
+if($empty != true){
 echo "<table>
 <tr><th>Name
 </th><th>Adress
@@ -74,6 +118,7 @@ echo "<table>
 </th><th>Rating
 </th><th>More info
 </th></tr>";
+}
 foreach ($result as $WifiSpots) {
     echo
     
