@@ -13,17 +13,18 @@
 		<!-- Makes the bar at the top with the logo and navigation -->	
 			<div class="center">
 		<!-- Places and Positions the Logo in the nav bar -->	
-				<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="70">
-		Brisbane City Council Wifi Parks
 				<div class="topnav">
-					<a href="searchpage.php">Home</a>
-					<a class="active" href="searchResult.php">Parks</a>
+					<img src="../Resources/bcc.jpg" alt="Brisbane City Council logo" height="70" width="340">
 					<a href="register.php">Register</a>
+					<a class="active" href="searchResult.php">Parks</a>
+					<a href="searchpage.php">Home</a>
 				</div>
 			</div>
 			<br>
 			<br>
 			<br>
+			
+		<!-- Creates box in center of the page for content-->	
 			<div class="center1"> 
 				<table class="Result">
 <?php
