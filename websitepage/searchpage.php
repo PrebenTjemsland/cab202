@@ -105,6 +105,8 @@
 			<br>
 			<br>
 			<br>
+			
+			<!-- Creates white box in center of page for search bar and navigation-->
 			<div class="center1" itemscope itemtype="http://schema.org/SiteNavigationElement" about="search">
                 Search For a local Wifi Park:
 				<form method="post" action="searchResult.php">
