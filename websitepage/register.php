@@ -19,12 +19,12 @@
 					<a href="searchpage.php">Home</a>
 				</div>
 			</div>
-		<!-- adds padding over the registerbox-->	    
-
+		<!-- adds padding over the registerbox-->	
 		<!-- creates a box -->	
 			<div class="loginbox" itemscope itemtype="http://schema.org/ProfilePage" about="Register">
-    <!-- Adds all input to the registerbox with HTML5 validation -->	
+   			 <!-- Adds all input to the registerbox with HTML5 validation -->	
 				<h1>Register</h1>
+   			 <!-- Creates registration form-->	
 					<form method="post" action="register.php" about="register" about="account">
 						<p>User name</p>
 							<input type="text" name="UserName" pattern="[A-Za-z]{1,}" placeholder="User Name" title="Must contain at least only letters" required>
@@ -45,6 +45,7 @@
 						<br>
 						<label>Repeat Password
 							<input type="password" name="PasswordRe" placeholder="Repeat Password" id="Repeat" onkeyup='check();' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+   			 <!-- Creates message saying if passwords match-->	
 						<span id='message'></span>	
 						</label>
 						<br/>
@@ -53,6 +54,7 @@
 						<a href="LinkToTerms">Terms and conditions</a>
 						<a>?</a>
 						<input type="checkbox"  value="Tick" required>
+   			 <!-- Creates submit button -->							
 						<input type="submit" name="submit"  value="Register">
 					</form>
 			</div>
