@@ -45,7 +45,9 @@ try{
 		<br>
 		<br>
 		<br> 
+			<!-- Creates white box in center of page for content -->
 <div class="center2"> 
+	<!-- Creates a table that allows data to be inputted from server/database-->
     <table id="Result2">
         
 <?php
@@ -77,7 +79,9 @@ foreach ($result as $WifiSpots) {
         </div>
       
     <br> <br> <br>
+			<!-- Creates box in center on the screen-->
 <div class="center2"> 
+	<!--  Creates a table for reviews to be input and pulled from database-->
     <table id="Review">
  
    <?php
